@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "About: Website Birthday"
-date:   2016-07-23
+date:   2016-07-24
 excerpt: "Finally, Makar..."
 tag:
 - jekyll
