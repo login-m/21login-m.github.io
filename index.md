@@ -1,10 +1,10 @@
 ---
 layout: home
 ---
-# About Theme
+# Welcome!
 
-This theme is Jekyll port of [vangeltzo.com](http://vangeltzo.com/) (by [Vangelis Tzortzis](https://github.com/srekoble)).
+My name is **Makar Baranov**. I'm a sophomore student studying _Computer Science_ at [University of Minnesota](https://twin-cities.umn.edu/).
 
-To learn how to install and use this theme check out the [installation guide](http://taylantatli.me/Halve/halve-theme/) for more information.
+Here you can find all the recent information about me, my projects and overall interesting stuff.
 
-If you have a question, find a bug, or just want to say hi, please open an [issue on GitHub](https://github.com/TaylanTatli/Halve/issues/new).
+Make yourself at home :)

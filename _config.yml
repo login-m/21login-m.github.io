@@ -1,8 +1,8 @@
 # Site
-title: Halve
-description: Stylish, Two-Column Jekyll Theme
-url: http://taylantatli.me/Halve
-logo: halve.png                                       # Site logo
+title: Makar Baranov
+description: BS Computer Science, MN
+url: http://localhost:4000
+logo: avatar.png                                      # Site logo
 locale: en_US
 
 # Left Block Images
@@ -29,20 +29,20 @@ sass:
 #google-analytics: UA-XXXXX-Y
 
 # Social Links
-#email:             email
+email:             mbaranofff@mail.ru
 #google.plus:        username
-twitter:            username
-#facebook:           username
-github:             username
-stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
+#twitter:            username
+facebook:           100009031183220
+github:             login-m
+#stackoverflow:      vlad
+linkedin:           makar-baranov-02405910a
 #xing:              username
-#instagram:          username
+#instagram:         username
 #lastfm:            username
 #tumblr:            username
 #pinterest:         username
 #foursquare:        username
-#steam:              username
+#steam:             username
 #dribbble:          username
 #youtube:           username
 #soundcloud:        username
@@ -52,7 +52,7 @@ stackoverflow:     123456/username   from a "http://stackoverflow.com/users/1234
 #keybase:           username
 #xmpp:              username@server.com
 #hackernews:        username
-behance:           username
+#behance:           username
 
 # Gems
 gems:
