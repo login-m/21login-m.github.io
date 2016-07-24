@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-07-23T23:29:45-05:00</updated><id>http://localhost:4000/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>About: Website Birthday</title><link href="http://localhost:4000/website_birthday/" rel="alternate" type="text/html" title="About: Website Birthday" /><published>2016-07-23T00:00:00-05:00</published><updated>2016-07-23T00:00:00-05:00</updated><id>http://localhost:4000/website_birthday</id><content type="html" xml:base="http://localhost:4000/website_birthday/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/home-image.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/home-image.png&quot; alt=&quot;Home Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Honestly, I have never been into web development. I didn’t really know where to start off my journey in this enormously large field if I would ever want to make a simple blog for myself. More than that, I thought that the process would be extremely dull and full of macaroni code. Thanks to my friends, particularly &lt;a href=&quot;http://satorusasozaki.com/&quot;&gt;Satoru Sasozaki&lt;/a&gt;, I was once again proven &lt;span style=&quot;color:red&quot;&gt;wrong&lt;/span&gt;:&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Making a website is fun, especially when you use a parsing engine like Jekyll.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Writing this post, I reassure myself that trying different things is the only way to know if you like them or not. As the time goes by, I would like to add more interesting features and see how far I can go with it.&lt;br /&gt;
+ But for now, smile! We are LIVE!&lt;/p&gt;
+
+&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=login-m&amp;amp;repo=Halve&amp;amp;type=Watch&amp;amp;count=false&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</content><category term="jekyll" /><category term="halve" /><category term="blog" /><summary>Finally, Makar...</summary></entry></feed>
