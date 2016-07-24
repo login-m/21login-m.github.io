@@ -2,6 +2,7 @@
 title: Makar Baranov
 description: BS Computer Science, MN
 url: https://login-m.github.io
+baseurl: 
 logo: avatar.png                                      # Site logo
 locale: en_US
 
