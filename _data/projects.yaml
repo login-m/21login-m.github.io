@@ -1,10 +1,10 @@
 
-- title: Start Page
-  url: https://login-m.github.io/
+- title: My Blog
+  url: https://github.com/login-m/login-m.github.io
   image: /images/home-image.png
   completed: true
   
-- title: Arcade Jet 2000
+- title: Arcade Jet 2000 
   url: https://github.com/login-m/game/
   image: /images/arcade-jet.png
   completed: true
