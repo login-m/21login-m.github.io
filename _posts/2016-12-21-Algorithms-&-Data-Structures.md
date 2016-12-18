@@ -10,7 +10,7 @@ tag:
 
 
 <figure class="half">
-    <a href="/images/clrs.JPG"><img src="/images/clrs.JPG"></a>
+    <a href="/images/clrs.png"><img src="/images/clrs.png"></a>
 </figure>
 
 
