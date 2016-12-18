@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2016-09-20T17:46:55-05:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>Project: Arcade Jet 2000</title><link href="https://login-m.github.io/arcade_jet/" rel="alternate" type="text/html" title="Project: Arcade Jet 2000" /><published>2016-08-21T00:00:00-05:00</published><updated>2016-08-21T00:00:00-05:00</updated><id>https://login-m.github.io/arcade_jet</id><content type="html" xml:base="https://login-m.github.io/arcade_jet/">&lt;figure class=&quot;half&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2016-12-18T14:14:48-06:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>Baranov’s ITA Walkthrough. Chapter 1</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures/" rel="alternate" type="text/html" title="Baranov's ITA Walkthrough. Chapter 1" /><published>2016-12-17T00:00:00-06:00</published><updated>2016-12-17T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures/">&lt;figure class=&quot;half&quot;&gt;
+    &lt;a href=&quot;/images/clrs.png&quot;&gt;&lt;img src=&quot;/images/clrs.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As the semester comes to an end, we (students) start to think how to best spend a so desired winter break. Well, you really shouldn’t think too hard because there is doubtly anything better than going through the &lt;a href=&quot;https://mitpress.mit.edu/books/introduction-algorithms&quot;&gt;Introduction to Algorithms&lt;/a&gt;. It was written by those smarties at MIT so it shouldn’t be a waste of time. So, my plan is to skim through the book, picking up key ideas of each chapter. My expectation is to cover half of the book’s topics by the end of my holidays and continue working on it some time later. I called this “project” &lt;strong&gt;Baranov’s ITA Walkthrough&lt;/strong&gt; because it just sounds cool.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Well, here we go. This is all you need to know from Chapter 1:&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;What is algorithm?&lt;/dt&gt;
+  &lt;dd&gt;&lt;span style=&quot;color:red&quot;&gt;Algorithm&lt;/span&gt; is any well-defined computational procedure that takes some value, or set of values, as input and produces some value, or set of values as output. In other words, a sequence of computational steps that transform the input into the output.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;A different variety of problems can be solved using algorithms. This is why we (programmers) should consider them as a &lt;strong&gt;technology&lt;/strong&gt; alongside with computer architectures, GUIs, integrated Web technologies or object-oriented systems (actually, all these things are also built upon the algorithms, lol).&lt;/p&gt;
+
+&lt;p&gt;Efficiency is a pretty big deal. Consider an insertion sort that roughly takes &lt;strong&gt;c&lt;sub&gt;1&lt;/sub&gt;n&lt;sup&gt;2&lt;/sup&gt;&lt;/strong&gt; to sort n items where c&lt;sub&gt;1&lt;/sub&gt; is a constant that does not depends on n. Now think about merge sort that takes &lt;strong&gt;c&lt;sub&gt;2&lt;/sub&gt;logn&lt;/strong&gt;, where c&lt;sub&gt;2&lt;/sub&gt; here is another constant. Given an unsorted array of size n, we would like to sort it.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;n = 10000;
+Insertion sort takes 100 seconds;
+Merge sort takes 1.5 seconds; 
+
+n = 100000;
+Insertion sort takes ~3.25 hours;
+Merge sort takes less than 16 seconds; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And that’s a difference. I also have to mention that constants do not make big of a difference because what really maters is how many instructions (n) we are going to process, especially on larger inputs.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;That’s it for Chapter 1.&lt;/p&gt;</content><category term="Algorithms" /><category term="Data Structures" /><summary>Algorithms &amp; Data Structures</summary></entry><entry><title>Project: Arcade Jet 2000</title><link href="https://login-m.github.io/Arcade-Jet/" rel="alternate" type="text/html" title="Project: Arcade Jet 2000" /><published>2016-08-21T00:00:00-05:00</published><updated>2016-08-21T00:00:00-05:00</updated><id>https://login-m.github.io/Arcade-Jet</id><content type="html" xml:base="https://login-m.github.io/Arcade-Jet/">&lt;figure class=&quot;half&quot;&gt;
     &lt;a href=&quot;/images/arcade-jet-title.png&quot;&gt;&lt;img src=&quot;/images/arcade-jet-title.png&quot; /&gt;&lt;/a&gt;
     &lt;a href=&quot;/images/arcade-jet-intro.png&quot;&gt;&lt;img src=&quot;/images/arcade-jet-intro.png&quot; /&gt;&lt;/a&gt;
 &lt;/figure&gt;
@@ -16,7 +45,7 @@
 
 &lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;Copyright/License Information:&lt;/strong&gt;  All the credits given in the LICENSE file of the GitHub game repository.&lt;/p&gt;
 
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=login-m&amp;amp;repo=ArcadeJet2000&amp;amp;type=Watch&amp;amp;count=false&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</content><category term="Games" /><category term="C++" /><category term="SFML" /><summary>C++ Vertical Shooter Game</summary></entry><entry><title>About: Website Birthday</title><link href="https://login-m.github.io/website_birthday/" rel="alternate" type="text/html" title="About: Website Birthday" /><published>2016-07-24T00:00:00-05:00</published><updated>2016-07-24T00:00:00-05:00</updated><id>https://login-m.github.io/website_birthday</id><content type="html" xml:base="https://login-m.github.io/website_birthday/">&lt;p&gt;&lt;a href=&quot;https://login-m.github.io/images/home-image.png&quot;&gt;&lt;img src=&quot;https://login-m.github.io/images/home-image.png&quot; alt=&quot;Home Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=login-m&amp;amp;repo=ArcadeJet2000&amp;amp;type=Watch&amp;amp;count=false&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</content><category term="Games" /><category term="C++" /><category term="SFML" /><summary>C++ Vertical Shooter Game</summary></entry><entry><title>About: Website Birthday</title><link href="https://login-m.github.io/Website-Birthday/" rel="alternate" type="text/html" title="About: Website Birthday" /><published>2016-07-24T00:00:00-05:00</published><updated>2016-07-24T00:00:00-05:00</updated><id>https://login-m.github.io/Website-Birthday</id><content type="html" xml:base="https://login-m.github.io/Website-Birthday/">&lt;p&gt;&lt;a href=&quot;https://login-m.github.io/images/home-image.png&quot;&gt;&lt;img src=&quot;https://login-m.github.io/images/home-image.png&quot; alt=&quot;Home Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;

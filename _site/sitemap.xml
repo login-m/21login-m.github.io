@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://login-m.github.io/arcade_jet/</loc>
+<loc>https://login-m.github.io/Algorithms-&-Data-Structures/</loc>
+<lastmod>2016-12-17T00:00:00-06:00</lastmod>
+</url>
+<url>
+<loc>https://login-m.github.io/Arcade-Jet/</loc>
 <lastmod>2016-08-21T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://login-m.github.io/website_birthday/</loc>
+<loc>https://login-m.github.io/Website-Birthday/</loc>
 <lastmod>2016-07-24T00:00:00-05:00</lastmod>
 </url>
 <url>
