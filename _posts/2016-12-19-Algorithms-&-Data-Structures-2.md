@@ -158,7 +158,7 @@ Number of levels of the recursion tree
 Then, our recursion tree has lgn + 1 levels, each costing cn, for a total of cn(lgn + 1) = cnlgn + cn.   
 Substitute this in our previous T(n) equation and we get:   
 T(n) = Θ(1) [if n ≤ c] or cnlgn + cn + Θ(n) = Θ(nlgn) [if n > 1].  
-This is a much better runtime complexity than the insertion sort we looked at earlier on.
+This is a much better runtime complexity than the insertion sort we looked at earlier.
 {: style="text-align: left;"}
 
  
