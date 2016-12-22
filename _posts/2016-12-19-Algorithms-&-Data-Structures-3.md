@@ -38,8 +38,6 @@ It's important to note that running time of insertion sort belongs both to Ω(n)
 
 The rest of the chapter deals with some special cases and a bunch of math rules about logs/exponentials, things that are useful to know but can be easily looked up when needed.
 
-That's all for Chapter 3.
-
 
 
 
