@@ -9,4 +9,8 @@
   image: /images/arcade-jet.png
   completed: true
   
+- title: ITA Baranov's Walkthrough
+  url: https://login-m.github.io/Walkthrough/
+  image: /images/walkthrough.png
+  completed: false
 
