@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Baranov's ITA Walkthrough. Chapter 4"
-date:   2016-12-25
+date:   2016-12-27
 excerpt: "More about Divide-and-Conquer"
 tag:
 - Maximum Subarray Problem
