@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Baranov's ITA Walkthrough. Chapter 3"
+title:  "ITA Baranov's Walkthrough. Chapter 3"
 date:   2016-12-21
 excerpt: "Growth of Functions"
 tag:

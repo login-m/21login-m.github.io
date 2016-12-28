@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Baranov's ITA Walkthrough. Chapter 2"
+title:  "ITA Baranov's Walkthrough. Chapter 2"
 date:   2016-12-19
 excerpt: "Insertion & Merge sorts. Analyzing the Algorithm"
 tag:
