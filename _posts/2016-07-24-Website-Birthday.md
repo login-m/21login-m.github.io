@@ -5,7 +5,6 @@ date:   2016-07-24
 excerpt: "Finally, Makar..."
 tag:
 - jekyll
-- halve 
 - blog
 ---
 
@@ -22,7 +21,6 @@ tag:
 
 
  Writing this post, I reassure myself that trying different things is the only way to know if you like them or not. As the time goes by, I would like to add more interesting features and see how far I can go with it.  
- But for now, smile! We are LIVE!
 {: style="text-align: left;"}
 
 <iframe src="https://ghbtns.com/github-btn.html?user=login-m&repo=Halve&type=Watch&count=false&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>    
