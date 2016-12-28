@@ -25,7 +25,7 @@ tag:
  {: style="text-align: left;"}
  
  Being done with the book, you come up with a simple vertical shooter game. I decided to add a little bit of twist to see how well I got the content and, more importantly, in what way I can apply the knowledge I received.
- The result is Arcade Jet 2000 which is quite enjoayble if you're up to some <span style="color:red">challenge</span>. You can download it [here](https://www.dropbox.com/s/hmpn57kydui4ryv/Arcade%20Jet%202000%20v1.0.rar?dl=0). 
+ The result is Arcade Jet 2000 which is quite enjoayble if you're up to some <span style="color:red">challenge</span>. You can download it [here](https://www.dropbox.com/s/tfuj982e0cyrbxw/ArcadeJet2000.rar?dl=0). 
  {: style="text-align: left;"}
  
 
