@@ -55,7 +55,7 @@ n = A.length
 let P[1..n] be a new array
 for i = 1 to n
 	P[i] = RANDOM(1,n<sup>3</sup>)
-sort A, using P as sort keys [Usually comparison sort theta(nlgn)]
+sort A, using P as sort keys [Usually comparison sort Θ(nlgn)]
 </pre>
 
 	Example: 
