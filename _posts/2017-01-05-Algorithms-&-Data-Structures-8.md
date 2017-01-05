@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ITA Baranov's Walkthrough. Chapter 8"
-date:   2017-01-04
+date:   2017-01-05
 excerpt: "Linear Sorting"
 tag:
 - Sorting
