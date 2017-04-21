@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2017-04-20T23:26:17-05:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>ITA Baranov’s Walkthrough. Chapter 11</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-11/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 11" /><published>2017-01-15T00:00:00-06:00</published><updated>2017-01-15T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-11</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-11/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Hash Tables&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2017-04-21T00:00:33-05:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>ITA Baranov’s Walkthrough</title><link href="https://login-m.github.io/Walkthrough/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough" /><published>2017-01-21T00:00:00-06:00</published><updated>2017-01-21T00:00:00-06:00</updated><id>https://login-m.github.io/Walkthrough</id><content type="html" xml:base="https://login-m.github.io/Walkthrough/">&lt;p&gt;&lt;a href=&quot;https://login-m.github.io/images/clrs.png&quot;&gt;&lt;img src=&quot;https://login-m.github.io/images/clrs.png&quot; alt=&quot;Home Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hi there,&lt;/p&gt;
+
+&lt;p&gt;I decided to organize everything I have written so far here so it should be easier to find what you need. I had to postpone some of the chapters for now, so some of the links may not yet work. This will be fixed (soon..)&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;I. Foundations&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-1/&quot; class=&quot;btn btn&quot;&gt;Chapter 1&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-2/&quot; class=&quot;btn btn&quot;&gt;Chapter 2&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-3/&quot; class=&quot;btn btn&quot;&gt;Chapter 3&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-4/&quot; class=&quot;btn btn&quot;&gt;Chapter 4&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-5/&quot; class=&quot;btn btn&quot;&gt;Chapter 5&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-Extra-1/&quot; class=&quot;btn btn&quot;&gt;Extra Level&lt;/a&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;II. Sorting and Order Statistics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-6/&quot; class=&quot;btn btn_info&quot;&gt;Chapter 6&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-7/&quot; class=&quot;btn btn_info&quot;&gt;Chapter 7&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-8/&quot; class=&quot;btn btn_info&quot;&gt;Chapter 8&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-9/&quot; class=&quot;btn btn_info&quot;&gt;Chapter 9&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-Extra-2/&quot; class=&quot;btn btn_info&quot;&gt;Extra Level&lt;/a&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;III. Data Structures&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-10/&quot; class=&quot;btn btn_success&quot;&gt;Chapter 10&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-11/&quot; class=&quot;btn btn_success&quot;&gt;Chapter 11&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-12/&quot; class=&quot;btn btn_success&quot;&gt;Chapter 12&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-13/&quot; class=&quot;btn btn_success&quot;&gt;Chapter 13&lt;/a&gt;.
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-14/&quot; class=&quot;btn btn_success&quot;&gt;Chapter 14&lt;/a&gt;
+&lt;a href=&quot;http://localhost:4000/Algorithms-&amp;amp;-Data-Structures-Extra-3/&quot; class=&quot;btn btn_success&quot;&gt;Extra Level&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;</content><category term="Algorithms" /><category term="Data Structures" /><summary>Complete List</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 11</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-11/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 11" /><published>2017-01-15T00:00:00-06:00</published><updated>2017-01-15T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-11</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-11/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Hash Tables&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;A &lt;strong&gt;hash table&lt;/strong&gt; is an effective data structure for implementing dictionaries. Although searching for an element in a hash table can take as long as searching for an element in a linked list - Θ(n) time in the worst case - in practice, hashing performs extremely well. Under reasonable assumptions, the average time to search for an element in a has table is O(1).&lt;/p&gt;
 
@@ -619,141 +651,4 @@ a = 9, b = 3, f(n) = n, and thus we have (n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt
 
 &lt;p style=&quot;text-align: left;&quot;&gt;It’s important to note that running time of insertion sort belongs both to Ω(n) and O(n&lt;sup&gt;2&lt;/sup&gt;) since it falls anywhere between a linear function of n and a quadratic function of n. Moreover, these bounds are asymptotically tight: for instance, the runnning time of insertion sort is not Ω(n^2), since there exists an input for which it runs in Θ(n) time (already sorted input). It is not contradictory, however, to say that the &lt;strong&gt;worst-case&lt;/strong&gt; running time of insertion sort is Ω(n^2), since there exists such an input. From here it’s not hard to deduce that Θ-notation implies both “Big-oh” and “Big-omega” notations.&lt;/p&gt;
 
-&lt;p&gt;The rest of the chapter deals with some special cases and a bunch of math rules about logs/exponentials, things that are useful to know but can be easily looked up when needed.&lt;/p&gt;</content><category term="Asymptotic Efficiency" /><summary>Growth of Functions</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 2</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-2/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 2" /><published>2016-12-19T00:00:00-06:00</published><updated>2016-12-19T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-2</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-2/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Insertion Sort&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Chapter 2 introduces &lt;strong&gt;insertion sort&lt;/strong&gt;, an algorithm that solves the sorting problem mentioned in a previous chapter.&lt;/p&gt;
-
-&lt;dl style=&quot;text-align: left;&quot;&gt;
-  &lt;dt&gt;Input&lt;/dt&gt;
-  &lt;dd&gt;A sequence of &lt;strong&gt;n&lt;/strong&gt; numbers &lt;strong&gt;&amp;lt;a&lt;sub&gt;1&lt;/sub&gt;, a&lt;sub&gt;2&lt;/sub&gt;, …, a&lt;sub&gt;n&lt;/sub&gt;&amp;gt;&lt;/strong&gt;&lt;/dd&gt;
-  &lt;dt&gt;Output&lt;/dt&gt;
-  &lt;dd&gt;A permutation &lt;strong&gt;&amp;lt;b&lt;sub&gt;1&lt;/sub&gt;, b&lt;sub&gt;2&lt;/sub&gt;, …, b&lt;sub&gt;n&lt;/sub&gt;&amp;gt;&lt;/strong&gt; of the input sequence such that &lt;strong&gt;b&lt;sub&gt;1&lt;/sub&gt; ≤ b&lt;sub&gt;2&lt;/sub&gt; ≤ … ≤ b&lt;sub&gt;n&lt;/sub&gt;&lt;/strong&gt;&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;pre&gt;
-INSERTION-SORT(A)						cost 	times
-for j = 2 to A.length						c&lt;sub&gt;1&lt;/sub&gt;	n
-	key = A[j]						c&lt;sub&gt;2&lt;/sub&gt;	n-1
-	// Insert A[j] into the sorted sequence A[1..j-1].	0	n-1
-	i = j - 1						c&lt;sub&gt;4&lt;/sub&gt;	n-1	
-	while i &amp;gt; 0 and A[i] &amp;gt; key				c&lt;sub&gt;5&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt;
-	  A[i+1] = A[i]						c&lt;sub&gt;6&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt; - 1
-	  i = i - 1						c&lt;sub&gt;7&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt; - 1
-	A[i+1] = key						c&lt;sub&gt;8&lt;/sub&gt;	n-1
-&lt;/pre&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Basically, algorithm divides the sequence in two parts. The left part &lt;strong&gt;A[1…j-1]&lt;/strong&gt; constitutes the currently sorted subarray and the right part is a subarray &lt;strong&gt;A[j+1…n]&lt;/strong&gt; that corresponds to the numbers to be sorted. What you want to do is to pick an element (starting from 2), go down the array and try to find a good spot to fit the number in, at the same time copying the values one place over to have a free slot for insertion.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Analyzing algorithms&lt;/strong&gt;&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Running Time &lt;strong&gt;T(N)&lt;/strong&gt;&lt;/dt&gt;
-  &lt;dd&gt;The running time of the algorithm is the sum of running times for each statement executed; a statement that takes &lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;&lt;/strong&gt; steps to execute and executes &lt;strong&gt;n&lt;/strong&gt; times will contribute &lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;n&lt;/strong&gt; to the total running time.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;T(N) = c&lt;sub&gt;1&lt;/sub&gt;*n c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;Σj +c&lt;sub&gt;6&lt;/sub&gt;Σ(t&lt;sub&gt;j&lt;/sub&gt;-1) +c&lt;sub&gt;7&lt;/sub&gt;Σ(t&lt;sub&gt;j&lt;/sub&gt;-1) +c&lt;sub&gt;8&lt;/sub&gt;(n-1).&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Algorithm’s running time does depend on the input. 
-For example, if the input array is sorted, we would have A[i]  key when i has its initial value of j-1. Thus t&lt;sub&gt;j&lt;/sub&gt; = 1 for j = 2, 3 … n and the T(N) would be:&lt;br /&gt;
-T(N) = c&lt;sub&gt;1&lt;/sub&gt;n +c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;(n-1) +c&lt;sub&gt;8&lt;/sub&gt;(n-1) = (c&lt;sub&gt;1&lt;/sub&gt;+..c&lt;sub&gt;8&lt;/sub&gt;)n - (c&lt;sub&gt;2&lt;/sub&gt;+c&lt;sub&gt;4&lt;/sub&gt;+c&lt;sub&gt;5&lt;/sub&gt;+c&lt;sub&gt;8&lt;/sub&gt;) = &lt;strong&gt;Cn - c&lt;/strong&gt;&lt;br /&gt;
-This clearly looks like a &lt;span style=&quot;color:red&quot;&gt;linear&lt;/span&gt; function of n.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Another example, array is in reverse sorted order, then we must compare the entire left subarray which would make t&lt;sub&gt;j&lt;/sub&gt; = j for j = 2, 3 … n. Consequently, T(N) would look like:&lt;br /&gt;
-T(N) = c&lt;sub&gt;1&lt;/sub&gt;n +c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;(n(n+1)/2-1) + c&lt;sub&gt;6&lt;/sub&gt;(n(n-1)/2) + c&lt;sub&gt;7&lt;/sub&gt;(n(n-1)/2) +c&lt;sub&gt;8&lt;/sub&gt;(n-1) &lt;br /&gt;
-= &lt;strong&gt;Cn&lt;sup&gt;2&lt;/sup&gt; + Cn - c&lt;/strong&gt;&lt;br /&gt;
-This clearly looks like a &lt;span style=&quot;color:red&quot;&gt;quadratic&lt;/span&gt;  function of n.&lt;/p&gt;
-&lt;p class=&quot;notice_info&quot;&gt;Notice that  Σ(j=2 to n)[j] = n(n+1)/2-1 and Σ(j=2 to n)[j-1] = n(n-1)/2&lt;/p&gt;
-
-&lt;p&gt;When we try to analyze algorithms, we usually only care about finding the &lt;strong&gt;worst-case&lt;/strong&gt; running times. Why?&lt;/p&gt;
-&lt;ol style=&quot;text-align: left;&quot;&gt;
-  &lt;li&gt;It gives an upper bound on the running time for any input. Knowing it provides a guarantee that the algorithm will never take any longer.&lt;/li&gt;
-  &lt;li&gt;In some cases, worst case occurs fairly often (e.g. searching a database for non-existent information)&lt;/li&gt;
-  &lt;li&gt;The “average case” is often roughly as bad as the worst case. For example, imagine that half of the elements in A[1…j-1] are less than A[j] and half are greater. It would make t&lt;sub&gt;j&lt;/sub&gt; = j/2 which would be the same quadratic formula but divided by a constant (2), not a huge difference.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;To denote the worst case we write the running time of &lt;strong&gt;Θ(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/strong&gt; (pronounced “theta of n-squared”) which represents a rate of growth or order of growth. We can ignore the lower-order terms because they are relatively insignificant for large values of n. All we care about is the leading term of the formula (e.g., cn&lt;sup&gt;2&lt;/sup&gt;).&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Algorithm Design &amp;amp; Mergesort&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Sometimes, we can come up with a different approach to tackle the same problem. So far we used an incremental approach: to sort the subarray A[1…j-1], we inserted a single element A[j] into its proper place, yielding the sorted subarray. A different way of doing things would be using &lt;strong&gt;divide-and-conquer&lt;/strong&gt; method: break the problem into several subproblems that are similar to the original problem but smaller in size, solve the subproblems recursively, and finally combine these solutions to create a solution to the original problem. Mergesort algorithm would be a good example of this.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;Divide&lt;/strong&gt;: Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.&lt;br /&gt;
-&lt;strong&gt;Conquer&lt;/strong&gt;: Sort the two subsequences recursively using merge sort. &lt;br /&gt;
-&lt;strong&gt;Combine&lt;/strong&gt;: Merge the two sorted subsequences to produce a fully sorted sequence.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;The following &lt;code&gt;MERGE&lt;/code&gt; function merges two sorted subarrays &lt;strong&gt;A[p..q]&lt;/strong&gt; and &lt;strong&gt;A[q + 1..r]&lt;/strong&gt; where p ≤ q ≤ r. It merges them to form a single sorted subarray that replaces the current subarray &lt;strong&gt;A[p..r]&lt;/strong&gt;. Since we perform at most n steps, where each step is just a comparing of two elements from left and right subarrays, merging takes Θ(N) time.&lt;/p&gt;
-
-&lt;pre&gt;
-MERGE(A,p,q,r)
-n1 = q-p+1
-n2 = r-q
-let L[1..n1+1] and R[1..n2 +1] be new arrays
-for i = 1 to n1
-	L[i] = A[p+i-1]
-for j=1 to n2
-	R[j] = A[q+j]
-L[n1+1] = inf
-L[n2+1] = inf
-i = 1
-j = 1
-for k = p to r
-	if L[i] &amp;lt;= R[j]
-		A[k] = L[i]
-		i = i + 1
-	else A[k] = R[j]
-		j = j + 1
-&lt;/pre&gt;
-
-&lt;ol style=&quot;text-align: left;&quot;&gt;
-  &lt;li&gt;Compute the length of &lt;strong&gt;A[p..q]&lt;/strong&gt; and &lt;strong&gt;A[q+1..r]&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Create left and right of lengths &lt;strong&gt;n&lt;sub&gt;1&lt;/sub&gt;+1&lt;/strong&gt; and &lt;strong&gt;n&lt;sub&gt;2&lt;/sub&gt;+1&lt;/strong&gt;. Extra position holds the sentinel which would simplify our code.&lt;/li&gt;
-  &lt;li&gt;For loops copy the subarray &lt;strong&gt;A[p..q]&lt;/strong&gt; into &lt;strong&gt;L[1..n&lt;sub&gt;1&lt;/sub&gt;]&lt;/strong&gt; and &lt;strong&gt;A[q+1..r]&lt;/strong&gt; into &lt;strong&gt;R[1..n&lt;sub&gt;2&lt;/sub&gt;]&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;Put the sentinels.&lt;/li&gt;
-  &lt;li&gt;Put the values in &lt;strong&gt;A&lt;/strong&gt; in order.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Now we can use merge procedure as a subroutine in the merge sort algorithm.
-The procedure sorts the elements in the subarray &lt;strong&gt;A[p..r]&lt;/strong&gt;. If p ≥ r the subarray has at most one element and is therefore already sorted. Otherwise, the divide step simply computes an index &lt;strong&gt;q&lt;/strong&gt; that partitions A[p..r] into two subarrays: A[p..q], containing &lt;strong&gt;ceil(n/2)&lt;/strong&gt; elements and A[q+1..r], containing &lt;strong&gt;floor(n/2)&lt;/strong&gt; elements.&lt;/p&gt;
-&lt;pre&gt;
-MERGE-SORT(A,p,r)
-if p &amp;lt; r
-	q = floor((p+r)/2)
-	MERGE-SORT(A,p,q)
-	MERGE-SORT(A,q+1,r)
-	MERGE(A,p,q,r)
-&lt;/pre&gt;
-&lt;p style=&quot;text-align: left;&quot;&gt;To sort an entire array, we make the initial call &lt;code&gt;MERGE-SORT(A,1,A.length)&lt;/code&gt;. The algorithms goes all the way to the bottom, merges pairs of 1-item seqs to form sorted seqs of length 2, merges pairs of seqs of length 2 to form sorted seqs of length 4 and so on, until two sequences of length n/2 are merged to form the final sorted sequence of length n.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/mergesort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Runtime Complexity&lt;/strong&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align: left;&quot;&gt;T(n) is either going to be Θ(1) if n ≤ c or aT(n/b) + D(n) + C(n). &lt;br /&gt;
-In our case: &lt;br /&gt;
-1) D(n) is Θ(1) operation (finding q) [Divide] &lt;br /&gt;
-2) We recursively solve two subproblems, each of size n/2, which contributes to 2T(n/2) to the running time [Conquer] &lt;br /&gt;
-3) We have seen that MERGE takes Θ(N) time on n-element subarray so C(N) = Θ(N) [Combine]&lt;br /&gt;
-Thus, we get T(n) = Θ(1) [if n ≤ c] or 2T*(n/2) + Θ(n) [if n &amp;gt; 1]&lt;/p&gt;
-
-&lt;p&gt;So what exactly is 2T*(n/2)? To find it out, let’s refer to a recursion tree to better understand the first term.&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Recursion Tree&lt;/dt&gt;
-  &lt;dd&gt;A recursion tree is useful for visualizing what happens when a recurrence is iterated. It diagrams the tree of recursive calls and the amount of work done at each call.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/mergesort_rt.jpg&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;First level takes cn time. &lt;br /&gt;
-Second level takes 2(cn/2) = cn.    &lt;br /&gt;
-Third level takes 4(cn/4) = cn.   &lt;br /&gt;
-To find out the total running time we need to sum up all the costs on each level. How do we know the number of levels?&lt;/p&gt;
-
-&lt;dl&gt;
-  &lt;dt&gt;Number of levels of the recursion tree&lt;/dt&gt;
-  &lt;dd&gt;The total number of levels of the recursion tree is &lt;strong&gt;lgn + 1&lt;/strong&gt;, where n is the number of leaves, corresponding to the input size.&lt;/dd&gt;
-&lt;/dl&gt;
-
-&lt;p style=&quot;text-align: left;&quot;&gt;Then, our recursion tree has lgn + 1 levels, each costing cn, for a total of cn(lgn + 1) = cnlgn + cn. &lt;br /&gt;
-Substitute this in our previous T(n) equation and we get: &lt;br /&gt;
-T(n) = Θ(1) [if n ≤ c] or cnlgn + cn + Θ(n) = Θ(nlgn) [if n &amp;gt; 1].&lt;br /&gt;
-This is a much better runtime complexity than the insertion sort we looked at earlier.&lt;/p&gt;</content><category term="Insertion Sort" /><category term="Runtime Complexity" /><category term="Merge Sort" /><summary>Insertion &amp; Merge sorts. Analyzing the Algorithm</summary></entry></feed>
+&lt;p&gt;The rest of the chapter deals with some special cases and a bunch of math rules about logs/exponentials, things that are useful to know but can be easily looked up when needed.&lt;/p&gt;</content><category term="Asymptotic Efficiency" /><summary>Growth of Functions</summary></entry></feed>
