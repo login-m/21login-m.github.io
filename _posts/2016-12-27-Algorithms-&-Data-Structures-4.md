@@ -85,7 +85,7 @@ There are three methods for solving recurrences (obtaining asymptotic Θ or O bo
 
 1. In the substitution method, we guess a bound and then use mathematical induction to prove our guess correct.
 
-2. The recursion-tree method converts the recurrence into a tree whose nodes represenet the costs incurred at various levels of the recursion.
+2. The recursion-tree method converts the recurrence into a tree whose nodes represent the costs incurred at various levels of the recursion.
 
 3. The master method provides bounds for recurrences of the form T(n) = aT(n/b) + f(n) - where algorithm creates subproblems, each of which is n/b the size of the original problem, and in which the divide and combine steps together take f(n) time.   
 
@@ -96,7 +96,7 @@ There are three methods for solving recurrences (obtaining asymptotic Θ or O bo
 1. Guess the form of the solution.   
 2. Use mathematical induction to find the constants and show that the solution works.  
 
-For example, T(n) = 2T(floor(n/2)) + n. We may guess that the solution is T(n) = O(nlgn) since it reminds us about the recurrence we've seen earlier. The substitution method requires us to prove that T(n) ≤ cnlgn for an appropriate choice of the constant c > 0.We start by assuming that this bound holds for all positive number m < n, in particular for m = (floor(n/2)), yiedling  T((floor(n/2)) ≤ c(floor(n/2))lg(floor(n/2)). Substitute this into recurrence and we get:  
+For example, T(n) = 2T(floor(n/2)) + n. We may guess that the solution is T(n) = O(nlgn) since it reminds us about the recurrence we've seen earlier. The substitution method requires us to prove that T(n) ≤ cnlgn for an appropriate choice of the constant c > 0.We start by assuming that this bound holds for all positive number m < n, in particular for m = (floor(n/2)), yielding T((floor(n/2)) ≤ c(floor(n/2))lg(floor(n/2)). Substitute this into recurrence and we get:  
 T(n)   
 	 ≤ 2(c(floor(n/2))lg(floor(n/2))) + n   
      ≤ cnlg(n/2) + n   

@@ -77,7 +77,7 @@ Notice that every level of the tree has cost cn, until the recursion reaches a b
 **A randomized version of quicksort**
  {: style="text-align: center;"}
 
- In exploring the average-case behaviour of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In an engineering situation, however, we cannot always expect this assumption to hold. However, we can add randomization to an algorithm in order to obtain good expected performance over all inputs with a help of randomization technique called **random sampling**. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p..r]. We do so by first exchanging element A[r] with an element chosen at random from A[p..r].
+ In exploring the average-case behavior of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In an engineering situation, however, we cannot always expect this assumption to hold. However, we can add randomization to an algorithm in order to obtain good expected performance over all inputs with a help of randomization technique called **random sampling**. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p..r]. We do so by first exchanging element A[r] with an element chosen at random from A[p..r].
 
 
 <pre>

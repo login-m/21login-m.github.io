@@ -14,7 +14,7 @@ tag:
 </figure>
 
 
- As the semester comes to an end, we (students) start to think how to best spend a so desired winter break. Well, you really shouldn't think too hard because there is doubtly anything better than going through the [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms). It was written by those smarties at MIT so it shouldn't be a waste of time. So, my plan is to skim through the book, picking up key ideas of each chapter. My expectation is to cover half of the book's topics by the end of my holidays and continue working on it some time later. I called this "project" __ITA Baranov's Walkthrough__ because it just sounds cool.  
+ As the semester comes to an end, we (students) start to think how to best spend a so desired winter break. Well, you really shouldn't think too hard because there is doubtfully anything better than going through the [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms). It was written by those smarties at MIT so it shouldn't be a waste of time. So, my plan is to skim through the book, picking up key ideas of each chapter. My expectation is to cover half of the book's topics by the end of my holidays and continue working on it some time later. I called this "project" __ITA Baranov's Walkthrough__ because it just sounds cool.  
 
  Well, here we go. This is all you need to know from Chapter 1:
  {: style="text-align: left;"}

@@ -1,0 +1,49 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <title>ITA Baranov’s Walkthrough. Chapter 10 &#8211; Makar Baranov</title> <meta name="description" content="Elementary Data Structures"> <meta name="keywords" content="Data Structures"> <!-- Twitter Cards --> <meta name="twitter:card" content="summary"> <meta name="twitter:image" content="avatar.png"> <meta name="twitter:title" content="ITA Baranov's Walkthrough. Chapter 10"> <meta name="twitter:description" content="Elementary Data Structures"> <!-- Open Graph --> <meta property="og:locale" content="en_US"> <meta property="og:type" content="article"> <meta property="og:title" content="ITA Baranov's Walkthrough. Chapter 10"> <meta property="og:description" content="Elementary Data Structures"> <meta property="og:url" content="https://login-m.github.io/Algorithms-&-Data-Structures-10/"> <meta property="og:site_name" content="Makar Baranov"> <meta property="og:image" content="https://login-m.github.io/images/avatar.png"> <link rel="canonical" href="https://login-m.github.io/Algorithms-&-Data-Structures-10/"> <!-- Handheld --> <meta name="HandheldFriendly" content="True"> <meta name="MobileOptimized" content="320"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Feed --> <link type="application/atom+xml" rel="alternate" href="https://login-m.github.io/feed.xml" title="Makar Baranov" /> <!-- Favicons --> <link rel="shortcut icon" type="image/png" href="https://login-m.github.io/favicon.png" /> <link rel="shortcut icon" href="https://login-m.github.io/favicon.ico" /> <!-- CSS --> <link rel="stylesheet" type="text/css" href="https://login-m.github.io/assets/css/main.css"> <!-- Left Block Image for Posts --> <style type="text/css"> #posts.inner-post-page .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://login-m.github.io/images/unsplash-gallery-image-3.jpg) no-repeat;background-size: cover;} </style> <!-- Left Block Images for Home and Pages --> <style type="text/css"> #posts .block-left {background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://login-m.github.io/images/unsplash-image-10.jpg) no-repeat;background-size: cover, cover;} .block-left {background: linear-gradient(rgba(44,45,51,0.9), rgba(44,45,51,0.9)), url(https://login-m.github.io/images/home.png) no-repeat;background-size: cover;} </style> </head> <body id="posts" class="inner-post-page"> <div class="block-left"> <div class="content"> <a href="https://login-m.github.io" class="logo"><img src="https://login-m.github.io/images/avatar.png"></a> <div class="post-title-section"> <div class="section-line">Posts <em>/</em></div> <h1 class="section-title">ITA Baranov’s Walkthrough. Chapter 10 </h1> <ul class="tags"> <li><a href="https://login-m.github.io/tags#Data Structures">Data Structures</a></li> </ul> <div class="section-line reverse"><a href="https://login-m.github.io/posts">Back to posts</a> <em>/</em></div> </div> </div> </div> <div class="block-right"> <div class="share-buttons"> <a href="https://twitter.com/intent/tweet?text=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> </div> <a href="../posts.html" title="posts" class="posts-menu-icon"></a> <a title="projects" class="projects-menu-icon"> <span></span> </a> <div class="inner-post content"> <div class="date-highlight">13 Jan 2017</div> <p style="text-align: center;"><strong>Stacks and queues</strong></p> <p>Stacks and queues are dynamic sets in which the element removed from the set by the delete operation is prespecified. In a <strong>stack</strong>, the element deleted from the set is the one most recently inserted (LIFO policy). Similarly, in a <strong>queue</strong>, the element deleted is always the one that has been in the set for the longest time (FIFO policy).</p> <p style="text-align: left;"><strong>Stack</strong></p> <p><img src="/images/stack.png" alt="image-center" class="align-center" /></p><pre>
+STACK-EMPTY(S)
+if S.top == 0
+	return TRUE
+else return FALSE
+</pre><pre>
+PUSH(S,x)
+S.top = S.top + 1
+S[S.top] = x
+</pre><pre>
+POP(S)
+if STACK-EMPTY(S)
+	error "underflow"
+eles S.top = S.top - 1
+	return S[S.top + 1]
+</pre><p style="text-align: left;"><strong>Queues</strong></p> <p><img src="/images/queue.png" alt="image-center" class="align-center" /></p><pre>
+ENQUEUE(Q,x)
+Q[Q.tail] = x
+if Q.tail == Q.length
+	Q.tail = 1
+else Q.tail = Q.tail + 1
+</pre><pre>
+DEQUEUE(Q)
+x = Q[Q.head]
+if Q.head == Q.length
+	Q.head = 1
+else Q.head = Q.head + 1
+return x
+</pre><p class="notice_info"><strong>Notice:</strong> No error checking included.</p> <p style="text-align: center;"><strong>Linked lists</strong></p> <p>A <strong>linked list</strong> is a data structure in which the objects are arranged in a linear order. Unlike an array, however, in which the linear order is determined by the array indices, the order in a linked list is determined by a pointer in each object. The data structure provides a simple, flexible representation for dynamic sets, supporting (though not necessarily efficiently) all the basic operations. A <strong>doubly linked list</strong> provides an extra pointer to the previous element.</p> <p><img src="/images/linkedlist.png" alt="image-center" class="align-center" /></p><pre>
+LIST-SEARCH(L,k)
+x = L.head
+while x != NIL and x.key != k
+	x = x.next
+return x
+</pre><pre>
+LIST-INSERT(L,x)
+x.next = L.head
+if L.head != NIL
+	L.head.prev = x
+L.head = x
+x.prev = NIL
+</pre><pre>
+LIST-DELETE(L,x)
+if x.prev != NIL
+	x.prev.next = x.next
+else L.head = x.next
+if x.next != NIL
+	x.next.prev = x.prev
+</pre><p style="text-align: center;"><strong>Binary Trees</strong></p> <p>The methods for representing lists given in the previous section extend to any homogeneous data structure. In this section, we look specifically at the problem of representing rooted trees by linked data structures.</p> <p><img src="/images/binarytree.png" alt="image-center" class="align-center" /></p> <p>Each node stores pointers to parent, left child and right child. If x.p = NIL, then x is the root. If node x has no left child, then x.left = NIL, and similarly for the right child.</p> <p><img src="/images/unboundbranch.png" alt="image-center" class="align-center" /></p> <p>We can extend the scheme for representing a binary tree to any class of trees in which the number of children of each node is at most some constant k: we replace the left and right attributes by child1, child2, …, childk. The following scheme represents trees with arbitrary number of children. It has the advantage of using only O(n) space for any n-node rooted tree. The <strong>left-child, right-sibling representation</strong> contains a parent pointer p, and T.root points to the root of tree T. Instead of having a pointer to each of its children, however, each node x has only two pointers:</p> <ol> <li>x.left-child points to the leftmost child of node x, and</li> <li>x.right-sibling points to the sibling of x immediately to its right.</li> </ol> <p>If node x has no children, then x.left-child = NIL, and if node x is the rightmost child of its parent, then x.right-sibling = NIL.</p> <br> <a href="https://twitter.com/intent/tweet?text=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a> <a href="https://www.facebook.com/sharer/sharer.php?u=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a> <a href="https://plus.google.com/share?url=https://login-m.github.io/Algorithms-&-Data-Structures-10/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> <nav class="pagination"> <a href="https://login-m.github.io/Algorithms-&-Data-Structures-9/" class="pagination_pager" title="ITA Baranov’s Walkthrough. Chapter 9 ">previous</a> <a href="https://login-m.github.io/Algorithms-&-Data-Structures-11/" class="pagination_pager" title="ITA Baranov’s Walkthrough. Chapter 11 ">next</a> </nav> </div> </div> <!-- JS --> <script src="https://login-m.github.io/assets/js/main.min.js"></script> <div class="overlay"> <ul class="projects-menu"> <li style="background:url(https://login-m.github.io//images/home-image.png) center center no-repeat;"> <a href="https://github.com/login-m/login-m.github.io" target="_blank" rel="nofollow external"> <span> My Blog </span> </a> </li> <li style="background:url(https://login-m.github.io//images/arcade-jet.png) center center no-repeat;"> <a href="https://github.com/login-m/game/" target="_blank" rel="nofollow external"> <span> Arcade Jet 2000 </span> </a> </li> <li style="background:url(https://login-m.github.io//images/walkthrough.png) center center no-repeat;"> <a href="https://login-m.github.io/Walkthrough/" class="inactive" target="_blank" rel="nofollow external"> <span> ITA Baranov's Walkthrough <br><em>in progress</em> </span> </a> </li> </ul> </div> </body> </html>

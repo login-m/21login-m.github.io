@@ -24,7 +24,7 @@ for i = 1 to n
 </pre>
 
 Analyzing the cost of algorithm may seem very different from analyzing the running time. However, the analytical techniques used are identical whether we are analyzing cost or running time. We need to count the number of times certain basic operations are executed.
-Interviewing has a low cost **c<sub>i</sub>**, whereas hiring is expensive, costing **c<sub>h</sub>**. If m is the number of people hired, the total cost associated with this algoritm is O(c<sub>i</sub>n + c<sub>h</sub>m).   
+Interviewing has a low cost **c<sub>i</sub>**, whereas hiring is expensive, costing **c<sub>h</sub>**. If m is the number of people hired, the total cost associated with this algorithm is O(c<sub>i</sub>n + c<sub>h</sub>m).   
 
 **Worst-case analysis**: we would actually need to hire every candidate that we interview. This situation occurs if the candidates come in strictly increasing order of quality, in which case we have n times, for a total hiring cost of O(c<sub>h</sub>n).    
 
@@ -36,7 +36,7 @@ We wish to compute the expected number of times that we hire a new office assist
 Even though we interview n people, we actually hire only approximately lnn of them, on average. This means that the average-case total hiring cost is **O(c<sub>h</sub>ln*n)** which is a significant improvement over the worst-case hiring cost of **O(c<sub>h</sub>n)**.   
 
 
-In many cases, we know very little about the input distribution. Yet we often can use probablity and randomness as a tool for algorithm design and analysis, by making the behaviour of part of the algorithm random. In the hiring problem, it may seem as if the candidates are being presented to us in a random order, but we have no way of knowing whether or not they really are. What we need to do is to change the model slightly. We say that the employment agency has n candidates, and they send us a list of the candidates in advance. On each day, we chose, randomly, which candidate to interview. Although we still know nothing about how well they suit our job, we have made a significant change. Instead of relying on a guess that the candidates come to us in a random order, we have instead gained control of the process and enforced a random order. In other words, we modified the algorithm and we still expect to hire a new office assistant approximately ln*n times. But now we expect this to be the case for **any** input, rather than for inputs drawn from a particular distribution.
+In many cases, we know very little about the input distribution. Yet we often can use probability and randomness as a tool for algorithm design and analysis, by making the behavior of part of the algorithm random. In the hiring problem, it may seem as if the candidates are being presented to us in a random order, but we have no way of knowing whether or not they really are. What we need to do is to change the model slightly. We say that the employment agency has n candidates, and they send us a list of the candidates in advance. On each day, we chose, randomly, which candidate to interview. Although we still know nothing about how well they suit our job, we have made a significant change. Instead of relying on a guess that the candidates come to us in a random order, we have instead gained control of the process and enforced a random order. In other words, we modified the algorithm and we still expect to hire a new office assistant approximately ln*n times. But now we expect this to be the case for **any** input, rather than for inputs drawn from a particular distribution.
 
 <pre>
 RANDOMIZED-HIRE-ASSISTANT(n)
@@ -70,5 +70,5 @@ for i = 1 to n
 	swap A[i] with A[RANDOM(i,n)] (Better, O(n) time)     
 </pre>  
 
-Again, algorithm is randomized if its behaviour is determined not only by its input but also by values produced by a random-number generator. In general, we discuss the **average-case running time** when the probability distribution is over the inputs to the algorithm, and we discuss the **expected running time** when the algorithm itself makes random choices.     
+Again, algorithm is randomized if its behavior is determined not only by its input but also by values produced by a random-number generator. In general, we discuss the **average-case running time** when the probability distribution is over the inputs to the algorithm, and we discuss the **expected running time** when the algorithm itself makes random choices.     
 

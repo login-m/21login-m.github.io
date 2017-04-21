@@ -1,60 +1,759 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2016-12-18T14:14:48-06:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>Baranov’s ITA Walkthrough. Chapter 1</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures/" rel="alternate" type="text/html" title="Baranov's ITA Walkthrough. Chapter 1" /><published>2016-12-17T00:00:00-06:00</published><updated>2016-12-17T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures/">&lt;figure class=&quot;half&quot;&gt;
-    &lt;a href=&quot;/images/clrs.png&quot;&gt;&lt;img src=&quot;/images/clrs.png&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="https://login-m.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://login-m.github.io/" rel="alternate" type="text/html" /><updated>2017-04-20T23:26:17-05:00</updated><id>https://login-m.github.io/</id><title>Makar Baranov</title><subtitle>BS Computer Science, MN</subtitle><entry><title>ITA Baranov’s Walkthrough. Chapter 11</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-11/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 11" /><published>2017-01-15T00:00:00-06:00</published><updated>2017-01-15T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-11</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-11/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Hash Tables&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;As the semester comes to an end, we (students) start to think how to best spend a so desired winter break. Well, you really shouldn’t think too hard because there is doubtly anything better than going through the &lt;a href=&quot;https://mitpress.mit.edu/books/introduction-algorithms&quot;&gt;Introduction to Algorithms&lt;/a&gt;. It was written by those smarties at MIT so it shouldn’t be a waste of time. So, my plan is to skim through the book, picking up key ideas of each chapter. My expectation is to cover half of the book’s topics by the end of my holidays and continue working on it some time later. I called this “project” &lt;strong&gt;Baranov’s ITA Walkthrough&lt;/strong&gt; because it just sounds cool.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;hash table&lt;/strong&gt; is an effective data structure for implementing dictionaries. Although searching for an element in a hash table can take as long as searching for an element in a linked list - Θ(n) time in the worst case - in practice, hashing performs extremely well. Under reasonable assumptions, the average time to search for an element in a has table is O(1).&lt;/p&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;Well, here we go. This is all you need to know from Chapter 1:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/htchaining.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;dl&gt;
-  &lt;dt&gt;What is algorithm?&lt;/dt&gt;
-  &lt;dd&gt;&lt;span style=&quot;color:red&quot;&gt;Algorithm&lt;/span&gt; is any well-defined computational procedure that takes some value, or set of values, as input and produces some value, or set of values as output. In other words, a sequence of computational steps that transform the input into the output.&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;p&gt;Imagine you have an empty array &lt;strong&gt;T&lt;/strong&gt; of size &lt;strong&gt;n&lt;/strong&gt;. You are given a key and some data you would like to store. You would use a hash function &lt;strong&gt;h&lt;/strong&gt; to compute the slot from your key &lt;strong&gt;k&lt;/strong&gt; into array T. In the figure above you see that the k&lt;sub&gt;1&lt;/sub&gt; maps to the second slot of the array T. However, what should we do if multiple values map to the same slot (produce the same key)? We call this situation a &lt;strong&gt;collision&lt;/strong&gt;. The simplest resolution would be to make each slot contain a linked list and store the data consequently (also called &lt;strong&gt;chaining&lt;/strong&gt;). An alternative method for resolving collisions is called &lt;strong&gt;open addressing&lt;/strong&gt;, when all elements occupy the hash table itself. That is, each table entry contains either an element of the dynamic set or NIL. The advantage is that the latter avoids pointers all together. On the other hand, such hash table can “fill up” so that no further insertions can be made.&lt;/p&gt;
 
-&lt;p&gt;A different variety of problems can be solved using algorithms. This is why we (programmers) should consider them as a &lt;strong&gt;technology&lt;/strong&gt; alongside with computer architectures, GUIs, integrated Web technologies or object-oriented systems (actually, all these things are also built upon the algorithms, lol).&lt;/p&gt;
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Hash Functions&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Efficiency is a pretty big deal. Consider an insertion sort that roughly takes &lt;strong&gt;c&lt;sub&gt;1&lt;/sub&gt;n&lt;sup&gt;2&lt;/sup&gt;&lt;/strong&gt; to sort n items where c&lt;sub&gt;1&lt;/sub&gt; is a constant that does not depends on n. Now think about merge sort that takes &lt;strong&gt;c&lt;sub&gt;2&lt;/sub&gt;logn&lt;/strong&gt;, where c&lt;sub&gt;2&lt;/sub&gt; here is another constant. Given an unsorted array of size n, we would like to sort it.&lt;/p&gt;
+&lt;p&gt;Most hash functions assume that the universe of keys is the set of &lt;strong&gt;natural numbers&lt;/strong&gt;. Thus, if the keys are not natural numbers, we find a way to interpret them as natural numbers. For example, we can interpret a character string as an integer expressed in suitable radix notation. Let’s look at some of the well-known methods:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;n = 10000;
-Insertion sort takes 100 seconds;
-Merge sort takes 1.5 seconds; 
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;The division method&lt;/strong&gt;&lt;/p&gt;
 
-n = 100000;
-Insertion sort takes ~3.25 hours;
-Merge sort takes less than 16 seconds; 
+&lt;p&gt;In the &lt;strong&gt;division method&lt;/strong&gt; for creating hash functions, we map a key &lt;strong&gt;k&lt;/strong&gt; into one of the &lt;strong&gt;m&lt;/strong&gt; slots by taking the remainder of k divided by m. That is, the hash function is&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;h(k) = k mod m.   
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;And that’s a difference. I also have to mention that constants do not make big of a difference because what really maters is how many instructions (n) we are going to process, especially on larger inputs.&lt;/p&gt;
+&lt;p&gt;[For example, m = 12, k = 100, h(k) = 4] &lt;br /&gt;
+Since it requires only a single division operation, hashing by division is quite fast.
+When using the division method, we usually avoid certain values of m. For example, m should not be a power of 2, since if m = 2&lt;sub&gt;p&lt;/sub&gt;, then h(k) is just the p lowest-order bits of k. A prime not too close to an exact power of 2 is often a good choice for m. &lt;br /&gt;
+For example, suppose we wish to allocate a hash table, with collisions resolved by chaining, to hold roughly n = 2000 character strings, where a character has 8 bits. We don’t mind examining an average of 3 elements in an unsuccessful search, and so we allocate a hash table for size m = 701. We could choose m = 701 because it is a prime near 2000/3 but not near any power of 2. Treating each key k as an integer, our hash function would be h(k) = k mod 701.&lt;/p&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;That’s it for Chapter 1.&lt;/p&gt;</content><category term="Algorithms" /><category term="Data Structures" /><summary>Algorithms &amp; Data Structures</summary></entry><entry><title>Project: Arcade Jet 2000</title><link href="https://login-m.github.io/Arcade-Jet/" rel="alternate" type="text/html" title="Project: Arcade Jet 2000" /><published>2016-08-21T00:00:00-05:00</published><updated>2016-08-21T00:00:00-05:00</updated><id>https://login-m.github.io/Arcade-Jet</id><content type="html" xml:base="https://login-m.github.io/Arcade-Jet/">&lt;figure class=&quot;half&quot;&gt;
-    &lt;a href=&quot;/images/arcade-jet-title.png&quot;&gt;&lt;img src=&quot;/images/arcade-jet-title.png&quot; /&gt;&lt;/a&gt;
-    &lt;a href=&quot;/images/arcade-jet-intro.png&quot;&gt;&lt;img src=&quot;/images/arcade-jet-intro.png&quot; /&gt;&lt;/a&gt;
-&lt;/figure&gt;
-&lt;center&gt;&lt;b&gt;Arcade Jet 2000&lt;/b&gt;&lt;/center&gt;
-&lt;p style=&quot;text-align: left;&quot;&gt;&lt;br /&gt;
- Today I would like to write a few words about the project I’ve been working on for quite a while, in particular, a vertical shooter game written in C++. 
- Since I’ve always been interested in game development, the game was an excellent way for me to understand the structure behind it. To tell you the truth, 
- it was not easy, at all. Lots of things had to be learned along the way, including good coding practices and avoiding common mistakes.&lt;/p&gt;
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;The multiplication method&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;multiplication method&lt;/strong&gt; for creating hash functions operates in two steps. First, we multiply the key k by a constant &lt;strong&gt;A&lt;/strong&gt; in the range &lt;strong&gt;0 &amp;lt; A &amp;lt; 1&lt;/strong&gt; and extract the fractional part of &lt;strong&gt;kA&lt;/strong&gt;. Then, we multiply this value by &lt;strong&gt;m&lt;/strong&gt; and take the &lt;strong&gt;floor&lt;/strong&gt; of the result. In short, the hash function is&lt;/p&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;Arcade Jet 2000 was written using &lt;a href=&quot;http://www.sfml-dev.org/&quot;&gt;SFML Game Development Library&lt;/a&gt; along with their 2.0 GD Book.
- If you’re interested in creating some sort of gaming entertainment, I would highly recommend reading this book. It covers the most important aspects of the game development while guiding you along step by step.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;h(k) = floor(m(kA mod 1)),  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;Being done with the book, you come up with a simple vertical shooter game. I decided to add a little bit of twist to see how well I got the content and, more importantly, in what way I can apply the knowledge I received.
- The result is Arcade Jet 2000 which is quite enjoayble if you’re up to some &lt;span style=&quot;color:red&quot;&gt;challenge&lt;/span&gt;. You can download it &lt;a href=&quot;https://www.dropbox.com/s/hmpn57kydui4ryv/Arcade%20Jet%202000%20v1.0.rar?dl=0&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;where kA mod 1 means the fractional part of kA, that is, kA - floor(kA).
+An advantage of this method is that the value of m is not critical. However, with some values it works better. The optimal choice depends on the characteristics of the data being hashed. One suggested value if &lt;strong&gt;A = (sqrt(5)-1)/2 = 0.6180339887…&lt;/strong&gt;&lt;/p&gt;</content><category term="Data Structures" /><summary>Hash Tables</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 10</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-10/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 10" /><published>2017-01-13T00:00:00-06:00</published><updated>2017-01-13T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-10</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-10/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Stacks and queues&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;Copyright/License Information:&lt;/strong&gt;  All the credits given in the LICENSE file of the GitHub game repository.&lt;/p&gt;
+&lt;p&gt;Stacks and queues are dynamic sets in which the element removed from the set by the delete operation is prespecified. In a &lt;strong&gt;stack&lt;/strong&gt;, the element deleted from the set is the one most recently inserted (LIFO policy). Similarly, in a &lt;strong&gt;queue&lt;/strong&gt;, the element deleted is always the one that has been in the set for the longest time (FIFO policy).&lt;/p&gt;
 
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=login-m&amp;amp;repo=ArcadeJet2000&amp;amp;type=Watch&amp;amp;count=false&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</content><category term="Games" /><category term="C++" /><category term="SFML" /><summary>C++ Vertical Shooter Game</summary></entry><entry><title>About: Website Birthday</title><link href="https://login-m.github.io/Website-Birthday/" rel="alternate" type="text/html" title="About: Website Birthday" /><published>2016-07-24T00:00:00-05:00</published><updated>2016-07-24T00:00:00-05:00</updated><id>https://login-m.github.io/Website-Birthday</id><content type="html" xml:base="https://login-m.github.io/Website-Birthday/">&lt;p&gt;&lt;a href=&quot;https://login-m.github.io/images/home-image.png&quot;&gt;&lt;img src=&quot;https://login-m.github.io/images/home-image.png&quot; alt=&quot;Home Page&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;Stack&lt;/strong&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/stack.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;Honestly, I have never been into web development. I didn’t really know where to start off my journey in this enormously large field if I would ever want to make a simple blog for myself. More than that, I thought that the process would be extremely dull and full of macaroni code. Thanks to my friends, particularly &lt;a href=&quot;http://satorusasozaki.com/&quot;&gt;Satoru Sasozaki&lt;/a&gt;, I was once again proven &lt;span style=&quot;color:red&quot;&gt;wrong&lt;/span&gt;:&lt;/p&gt;
+&lt;pre&gt;
+STACK-EMPTY(S)
+if S.top == 0
+	return TRUE
+else return FALSE
+&lt;/pre&gt;
 
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Making a website is fun, especially when you use a parsing engine like Jekyll.&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;
+PUSH(S,x)
+S.top = S.top + 1
+S[S.top] = x
+&lt;/pre&gt;
 
-&lt;p style=&quot;text-align: left;&quot;&gt;Writing this post, I reassure myself that trying different things is the only way to know if you like them or not. As the time goes by, I would like to add more interesting features and see how far I can go with it.&lt;br /&gt;
- But for now, smile! We are LIVE!&lt;/p&gt;
+&lt;pre&gt;
+POP(S)
+if STACK-EMPTY(S)
+	error &quot;underflow&quot;
+eles S.top = S.top - 1
+	return S[S.top + 1]
+&lt;/pre&gt;
 
-&lt;iframe src=&quot;https://ghbtns.com/github-btn.html?user=login-m&amp;amp;repo=Halve&amp;amp;type=Watch&amp;amp;count=false&amp;amp;size=large&quot; frameborder=&quot;0&quot; scrolling=&quot;0&quot; width=&quot;160px&quot; height=&quot;30px&quot;&gt;&lt;/iframe&gt;</content><category term="jekyll" /><category term="halve" /><category term="blog" /><summary>Finally, Makar...</summary></entry></feed>
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;Queues&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/queue.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+ENQUEUE(Q,x)
+Q[Q.tail] = x
+if Q.tail == Q.length
+	Q.tail = 1
+else Q.tail = Q.tail + 1
+&lt;/pre&gt;
+
+&lt;pre&gt;
+DEQUEUE(Q)
+x = Q[Q.head]
+if Q.head == Q.length
+	Q.head = 1
+else Q.head = Q.head + 1
+return x
+&lt;/pre&gt;
+
+&lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;Notice:&lt;/strong&gt;  No error checking included.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Linked lists&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;linked list&lt;/strong&gt; is a data structure in which the objects are arranged in a linear order. Unlike an array, however, in which the linear order is determined by the array indices, the order in a linked list is determined by a pointer in each object. The data structure provides a simple, flexible representation for dynamic sets, supporting (though not necessarily efficiently) all the basic operations. A &lt;strong&gt;doubly linked list&lt;/strong&gt; provides an extra pointer to the previous element.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/linkedlist.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;
+LIST-SEARCH(L,k)
+x = L.head
+while x != NIL and x.key != k
+	x = x.next
+return x
+&lt;/pre&gt;
+
+&lt;pre&gt;
+LIST-INSERT(L,x)
+x.next = L.head
+if L.head != NIL
+	L.head.prev = x
+L.head = x
+x.prev = NIL
+&lt;/pre&gt;
+
+&lt;pre&gt;
+LIST-DELETE(L,x)
+if x.prev != NIL
+	x.prev.next = x.next
+else L.head = x.next
+if x.next != NIL
+	x.next.prev = x.prev
+&lt;/pre&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Binary Trees&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The methods for representing lists given in the previous section extend to any homogeneous data structure. In this section, we look specifically at the problem of representing rooted trees by linked data structures.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/binarytree.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each node stores pointers to parent, left child and right child. If x.p = NIL, then x is the root. If node x has no left child, then x.left = NIL, and similarly for the right child.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/unboundbranch.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can extend the scheme for representing a binary tree to any class of trees in which the number of children of each node is at most some constant k: we replace the left and right attributes by child1, child2, …, childk. The following scheme represents trees with arbitrary number of children. It has the advantage of using only O(n) space for any n-node rooted tree. The &lt;strong&gt;left-child, right-sibling representation&lt;/strong&gt; contains a parent pointer p, and T.root points to the root of tree T. Instead of having a pointer to each of its children, however, each node x has only two pointers:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;x.left-child points to the leftmost child of node x, and&lt;/li&gt;
+  &lt;li&gt;x.right-sibling points to the sibling of x immediately to its right.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If node x has no children, then x.left-child = NIL, and if node x is the rightmost child of its parent, then x.right-sibling = NIL.&lt;/p&gt;</content><category term="Data Structures" /><summary>Elementary Data Structures</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 9</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-9/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 9" /><published>2017-01-07T00:00:00-06:00</published><updated>2017-01-07T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-9</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-9/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Medians and Order Statistics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ostat.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The ith &lt;strong&gt;order statistic&lt;/strong&gt; of a set of n elements is the ith smallest element. For example, the minimum of a set of elements is the first order statistic (i = 1), and the maximum is the nth order statistic (i = n). A median, informally, is the “halfway point” of the set. When n is odd, the median is unique, occurring at  i = (n+1)/2. When n is even, there are two medians, occurring at i = n/2 and i = n/2+1. Next, the chapter addresses the problem of selecting the ith order statistic from a set of n distinct numbers. We formally specify the &lt;strong&gt;selection problem&lt;/strong&gt; as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;: A set A of n (distinct) numbers and an integer i, with 1 ≤ i ≤ n&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;: The element x is in set A that is larger than exactly i - 1 other elements of A.&lt;/p&gt;
+
+&lt;p&gt;We can no doubt solve the problem using any of comparison sorts presented earlier in O(nlgn) time. However, there is a much faster solution.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Selection in linear time&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To solve this problem, the book presents a divide-and-conquer algorithm. The algorithm &lt;code&gt;RANDOMIZED-SELECT&lt;/code&gt; is modeled after the quicksort algorithm of Chapter 7. As in quicksort, we partition the input array recursively. But unlike quicksort, which recursively processes both sides of the partition, &lt;code&gt;RANDOMIZED-SELECT&lt;/code&gt; works on only one side of the partition. This difference makes the latter to have the expected running time of Θ(n), assuming that the elements are distinct.&lt;/p&gt;
+
+&lt;pre&gt;
+RANDOMIZED-SELECT(A,p,r,i)
+if p == r     // base case
+	return A[p]
+q = RANDOMIZED-PARTITION(A,p,r) // partition
+k = q - p + 1 // left side + 1 (pivot)
+if i == k  //the pivot value is the answer
+	return A[q] 
+elseif i &amp;lt; k  // the answer is in the front 
+	return RANDOMIZED-SELECT(A,p,q-1,i)
+else          // the answer is in the back half 
+	return RANDOMIZED-SELECT(A,q+1,r,i-k)
+&lt;/pre&gt;
+
+&lt;p&gt;By doing some math, the book concludes that we can find any order statistic, and in particular the median, in &lt;strong&gt;expected linear time&lt;/strong&gt;, assuming that the elements are distinct. There is also an algorithm for selection problem that has a &lt;strong&gt;worst-case linear time&lt;/strong&gt; but I won’t cover it here since it’s not as practical as this one.&lt;/p&gt;</content><category term="Selection Problem" /><summary>Medians and Order Statistics</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 8</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-8/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 8" /><published>2017-01-05T00:00:00-06:00</published><updated>2017-01-05T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-8</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-8/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Linear Sorting&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The book has now introduced several algorithms that can sort n numbers in &lt;strong&gt;O(nlgn)&lt;/strong&gt; time. Merge sort and heapsort achieve this upper bound in the worst case; quicksort achieves it on average. These algorithms share an interesting property: &lt;strong&gt;the sorted order they determine is based only on comparisons between the input elements&lt;/strong&gt;. Thus, such sorting algorithms are called comparison sorts. By doing some math, you can prove that any comparison sort must make &lt;strong&gt;Ω(nlgn)&lt;/strong&gt; comparisons in the worst case to sort n elements. Thus, merge sort and heapsort are asymptotically optimal, and no comparison sort exists that is faster by more than a constant factor.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Counting sort&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Counting sort assumes that each of the n input elements is an integer in the range 0 to k, for some integer k. When k = O(n), the sort runs in Θ(n) time.&lt;/p&gt;
+
+&lt;pre&gt;
+COUNTING-SORT(A,B,k)
+let C[0..k] be a new array
+for i = 0 to k
+	C[i] = 0
+for j = 1 to A.length
+	C[A[j]] = C[A[j]] + 1
+// C[i] now contains the number of elements equal to i
+for i = 1 to k
+	C[i] = C[i] + C[i - 1]
+// C[i] now has the number of elements less than or equal to i
+for j = A.length downto 1
+	B[C[A[j]]] = A[j]
+	C[A[j]] = C[A[j]] - 1
+&lt;/pre&gt;
+
+&lt;p&gt;Counting sort determines, for each input element x, the number of elements less than x. It uses this information to place element x directly into its position in the output array. In the code below we assume that the input is an array &lt;strong&gt;A[1..n]&lt;/strong&gt;, and thus A.length = n. We need two other arrays: the array &lt;strong&gt;B[1..n]&lt;/strong&gt; holds the sorted output, and the array &lt;strong&gt;C[0..k]&lt;/strong&gt; provides temporary working storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/countsort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;How much time does counting sort require? The first for loop takes time Θ(k), second one takes time Θ(n), third - Θ(k), fourth - Θ(n). Thus, the overall time is Θ(k+n). In practice, the algorithm is used when we have k = O(n), in which case the running time is &lt;strong&gt;Θ(n)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Counting sort beats the comparison sorts’ lower bound of Ω(nlgn). In fact, no comparisons between input elements occur anywhere in the code. Instead, counting sort uses the actual values of the elements to index into an array. An important property of counting sort is that it is &lt;strong&gt;stable&lt;/strong&gt;: numbers with the same value appear in the output array in the same order as they do in the input array. This is important for our next algorithm.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Radix sort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Radix sort solves the sorting problem counterintuitively - by sorting on the &lt;strong&gt;least significant digit&lt;/strong&gt; first. In order for it to work, the digit sorts must be stable. The code for radix sort is straightforward. The following procedure assumes that each element in the n-element array A has d digits, where digit 1 is the lowest-order digit and digit d is the highest-order digit.&lt;/p&gt;
+
+&lt;pre&gt;
+RADIX-SORT(A,d)
+for i = 1 to d
+	use a stable sort to sort array A on digit i
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/radixsort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Is radix sort preferable to a comparison-based sorting algorithm, such as quicksort? Which sorting algorithm we prefer depends on the characteristics of the implementations, of the underlying machine (e.g., quicksort often uses hardware caches more effectively than radix sort), and of the input data. Moreover, the version of radix sort that uses counting sort as the intermediate stable sort does not sort in place, which many of the Θ(nlgn)-time comparison sorts do. Thus, when primary memory storage is at a premium, we might prefer an in-place algorithm such as quicksort.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Bucket sort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bucket sort assumes that the input is drawn from a uniform distribution and has an average-case running time of &lt;strong&gt;O(n)&lt;/strong&gt;. Like counting sort, bucket sort is fast because it assumes something about the input. Whereas counting sort assumes that the input consists of integers in a small range, bucket sort assumes that the input is &lt;strong&gt;generated by a random process&lt;/strong&gt; that distributes elements &lt;strong&gt;uniformly&lt;/strong&gt; and independently over the interval &lt;strong&gt;[0,1)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bucket sort divides this interval into n equal-size subintervals, or &lt;strong&gt;buckets&lt;/strong&gt;, and then distributes the n input numbers into the buckets. Since the inputs are uniformly and independently distributed, we don’t expect many numbers to fall into each bucket. To produce the output, we simply sort the numbers in each bucket and then go through the buckets in order, listing the elements in each.&lt;/p&gt;
+
+&lt;pre&gt;
+BUCKET-SORT(A)
+n = A.length
+let B[0..n - 1] be a new array
+for i = 0 to n - 1
+	make B[i] an empty list
+for i = 1 to n
+	insert A[i] into list B[floor(n*A[i])]
+for i = 0 to n - 1
+	sort list B[i] with insertion sort
+concat the lists B[0], B[1], ..., B[n - 1] together in order
+&lt;/pre&gt;
+
+&lt;p&gt;Even if the input is not drawn from a uniform distribution, bucket sort may still run in linear time. As long as the input has the property that the sum of the squares of the bucket sizes is linear in the total number of elements, the bucket sort will run in linear time.&lt;/p&gt;</content><category term="Sorting" /><category term="Algorithms" /><summary>Linear Sorting</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 7</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-7/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 7" /><published>2017-01-03T00:00:00-06:00</published><updated>2017-01-03T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-7</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-7/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Quicksort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The quicksort algorithm has a worst-case running time of Θ(n&lt;sup&gt;2&lt;/sup&gt;) on an input array of n numbers. Despite this slow worst-case running time, quicksort is often the best practical choice for sorting because it is remarkably efficient on the average: its expected running time is Θ(nlgn), and the constant factors hidden in the Θ(nlgn) notation are quite small. It also has the advantage of sorting in place and it works well even in virtual-memory environments.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Description of quicksort&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Quicksort, like merge sort, applies the divide-and-conquer paradigm introduced in Chapter 2:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Divide&lt;/strong&gt;: Partition (rearrange) the array A[p..r] into two (possibly empty) subarrays A[p..q-1] and A[q+1..r] such that each element of A[p..q-1] less than or equal to A[q], which is, in turn, less than or equal to each element of A[q+1..r]. Compute the index q as part of this partitioning procedure.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conquer&lt;/strong&gt;: Sort the two subarrays A[p..q-1] and A[q+1..r] by recursive call to quicksort.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Combine&lt;/strong&gt;: Because the subarrays are already sorted, no work is needed to combine them: the entire array A[p..r] is now sorted.&lt;/p&gt;
+
+&lt;pre&gt;
+QUICKSORT(A,p,r)
+if p &amp;lt; r
+	q = PARTITION(A,p,r)
+	QUICKSORT(A,p,q-1)
+	QUICKSORT(A,q+1,r)
+&lt;/pre&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Partitioning the array&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The key to the algorithm is the &lt;code&gt;PARTITION&lt;/code&gt; procedure, which rearranges the subarray A[p..r] in place:&lt;/p&gt;
+
+&lt;pre&gt;
+PARTITION(A,p,r)
+x = A[r]
+i = p - 1
+for j = p to r - 1
+	if A[j] &amp;lt;= x
+		i = i + 1
+		exchange A[i] with A[j]
+exchange A[i+1] with A[r]
+return i + 1
+&lt;/pre&gt;
+
+&lt;p&gt;First, it selects an element x = A[r] as a pivot element around which to partition the subarray A[p..r]. As the procedure runs, it partitions the array into four (possibly empty) regions. At the start of each iteration of the for, the regions must satisfy the following properties:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If p &amp;lt;= k &amp;lt;= i, then A[k] &amp;lt;= x.&lt;/li&gt;
+  &lt;li&gt;If i + 1 &amp;lt;= k &amp;lt;= j - 1, then A[k] &amp;gt; x.&lt;/li&gt;
+  &lt;li&gt;If k = r, then A[k] = x.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/quicksort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Performance of quicksort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The running time of quicksort depends on whether the partitioning is balanced or unbalanced, which in turn depends on which elements are used for partitioning. If the partitioning is balanced, the algorithm runs asymptotically as fast as merge sort. Otherwise, it can run asymptotically as slowly as insertion sort.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Worst-case&lt;/strong&gt;: occurs when the partitioning routine produces one subproblem with n - 1 elements and one with 0 elements at each recursive step. T(n) = T(n-1) + Θ(n) = Θ(n&lt;sup&gt;2&lt;/sup&gt;). (Ex. input is already sorted)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Best-case&lt;/strong&gt;: occurs when &lt;code&gt;PARTITION&lt;/code&gt; produces two subproblems, each of size no more than n/2 at each recursive step. In this case, we get recurrence T(n) = 2T(n/2) + Θ(n). To solve it, we apply the second case of master theorem and get T(n) = Θ(nlgn).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Average-case&lt;/strong&gt;: it is much closer to the best case than to the worst case. Suppose, for example, that the partitioning algorithm always produces 9-to-1 proportional split, which at quick glance seems quite unbalanced: T(n) = T(9n/10) + T(n/10) + cn. Figure below shows the recursion tree for this recurrence.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/quicksort_rt.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Notice that every level of the tree has cost cn, until the recursion reaches a boundary condition at depth log&lt;sub&gt;10&lt;/sub&gt;n = Θ(lgn), and then the levels have cost at most cn. The recursion terminates at depth log&lt;sub&gt;10/9&lt;/sub&gt;n = Θ(lgn). The total cost of quicksort is therefore O(nlgn). Thus, with a 9-to-1 proportional split at every level of recursion, which intuitively seems quite unbalanced, quicksort runs in O(nlgn) time - asymptotically the same as if the split were right down the middle. In fact, any split of constant proportionality yields a recursion tree of depth Θ(lgn), where the cost at each level is O(n). The running time is therefore &lt;strong&gt;O(nlgn) whenever the split has constant proportionality&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;A randomized version of quicksort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In exploring the average-case behavior of quicksort, we have made an assumption that all permutations of the input numbers are equally likely. In an engineering situation, however, we cannot always expect this assumption to hold. However, we can add randomization to an algorithm in order to obtain good expected performance over all inputs with a help of randomization technique called &lt;strong&gt;random sampling&lt;/strong&gt;. Instead of always using A[r] as the pivot, we will select a randomly chosen element from the subarray A[p..r]. We do so by first exchanging element A[r] with an element chosen at random from A[p..r].&lt;/p&gt;
+
+&lt;pre&gt;
+RANDOMIZED-PARTITION(A,p,r)
+i = RANDOM(p,r)
+exchange A[r] with A[i]
+return PARTITION(A,p,r)
+&lt;/pre&gt;
+
+&lt;pre&gt;
+RANDOMIZED-QUICKSORT(A,p,r)
+if p &amp;lt; r
+	q = RANDOMIZED-PARTITION(A,P,r)
+	RANDOMIZED-QUICKSORT(A,p,q-1)
+	RANDOMIZED-QUICKSORT(A,q+1,r)
+&lt;/pre&gt;
+
+&lt;p&gt;After doing some math, it can be concluded that, using &lt;code&gt;RANDOMIZED-PARTITION&lt;/code&gt;, the expected running time of quicksort is &lt;strong&gt;O(nlgn)&lt;/strong&gt; when element values are distinct.&lt;/p&gt;</content><category term="Sorting" /><category term="Algorithms" /><summary>Quicksort</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 6</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-6/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 6" /><published>2016-12-29T00:00:00-06:00</published><updated>2016-12-29T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-6</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-6/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Heaps&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this chapter, the book introduces another sorting algorithm: heapsort. Like merge sort, but unlike insertion sort, heapsort’s running time is &lt;strong&gt;O(nlgn)&lt;/strong&gt;. Like insertion sort, but unlike merge sort, heapsort sorts in place: only a constant number of array elements are stored outside the input array at any time. Thus, heapsort combines the better attributes of the two sorting algorithms we have already seen. It also introduces another algorithm design technique: using a data structure, in this case one called &lt;strong&gt;“heap”&lt;/strong&gt; to manage information. Not only is the heap data structure useful for heapsort, but it also makes an efficient priority queue.&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;(binary) heap&lt;/strong&gt; data structure is an array object that we can view as a nearly complete binary tree. Each node of the tree corresponds to an element of the array. The tree is completely filled on all levels except possibly the lowest, which is filled from the left up to a point. An array &lt;strong&gt;A&lt;/strong&gt; that represents a heap is an object with two attributes: &lt;code&gt;A.length&lt;/code&gt;, which gives the number of elements in the array, and &lt;code&gt;A.heap-size&lt;/code&gt;, which represents how many elements in the heap are stored within array A. The root of the tree is A[1], and given the index i of a node, we can easily compute the indices of its parent, left child, and right child:&lt;/p&gt;
+
+&lt;pre&gt;
+PARENT(i)
+return floor(i/2) 
+&lt;/pre&gt;
+
+&lt;pre&gt;
+LEFT(i)
+return 2i 
+&lt;/pre&gt;
+
+&lt;pre&gt;
+RIGHT(i)
+return 2i+1
+&lt;/pre&gt;
+
+&lt;p&gt;There are two kinds of binary heaps: max-heaps and min-heaps. In both kinds, the values in the nodes satisfy a heap property, the specifics of which depend on the kind of heap. In a max-heap: &lt;code&gt;A[Parent(i)] &amp;gt;= A[i]&lt;/code&gt;. A min-heap is organized in the opposite way: &lt;code&gt;A[Parent(i)] &amp;lt;= A[i]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Viewing a heap as a tree, we define the &lt;strong&gt;height&lt;/strong&gt; of a node in a heap to be the number of edges on the longest simple downward path from the node to a leaf, and we define the height of the heap to be the height of its root. Since a heap of n elements is based on a complete binary tree, its height is Θ(lgn). Since the basic operations on heaps run in time at most proportional to the height of the tree, they take &lt;strong&gt;O(lgn)&lt;/strong&gt; time.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Maintaining the heap property&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to maintain the max-heap property, we call the procedure &lt;code&gt;MAX-HEAPIFY&lt;/code&gt;. Its inputs are an array A and an index i into the array. When it is called, &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; assumes that the binary trees rooted as &lt;code&gt;LEFT(i)&lt;/code&gt; and &lt;code&gt;RIGHT(i)&lt;/code&gt; are max-heaps, but that A[i] might be smaller than its children, thus violating the max-heap property. The function lets the value at A[i] “go down” in the max-heap so that the subtree rotted at index i obeys the max-heap property.&lt;/p&gt;
+
+&lt;pre&gt;
+MAX-HEAPIFY(A,i)
+l = LEFT(i)
+r = RIGHT(i)
+if l &amp;lt;= A.heap-size and A[l] &amp;gt; A[i]
+	largest = l
+else largest = i
+if r &amp;lt;= A.heap-size and A[r] &amp;gt; A[largest]
+	largest = r
+if largest != i
+	exchange A[i] with A[largest]
+	MAX-HEAPIFY(A,largest)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/maxheapify.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At each step, the largest of the elements &lt;code&gt;A[i]&lt;/code&gt;, &lt;code&gt;A[LEFT(i)]&lt;/code&gt;, and &lt;code&gt;A[RIGHT(i)]&lt;/code&gt; is determined, and its index is stored in largest. If A[i] is largest, then the subtree rotted at node &lt;strong&gt;i&lt;/strong&gt; is already a max-heap and the procedure terminates. Otherwise, one of the two children has the largest element, and A[i] is swapped with A[largest], which causes node i and its children to satisfy the max-heap property. The node indexed by largest, however, now has the original value A[i], and thus the subtree rooted as largest might violate the max-heap property. We call &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; recursively on that subtree. The running time can be described by the following recurrence: T(n) &amp;lt;= T(2n/3) + Θ(1). Using the master theorem, we conclude that &lt;strong&gt;T(n) = O(lgn)&lt;/strong&gt; (case 2).&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Building a heap&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We can use the procedure &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; in a bottom-up manner to convert an array A[1..n], where  n = A.length, into a max-heap. The elements in the subarray &lt;strong&gt;A[(floor(n/2)+1)..n]&lt;/strong&gt; are all &lt;strong&gt;leaves&lt;/strong&gt; of the tree, so each is a 1-element heap to begin with. The procedure &lt;code&gt;BUILD-MAX-HEAP&lt;/code&gt; goes through the remaining nodes of the tree and runs &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; on each one. At first glance, the algorithm takes &lt;strong&gt;O(nlgn)&lt;/strong&gt; since we do n iterations and each call to &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; takes O(lgn). However, a tighter bound will be &lt;strong&gt;O(n)&lt;/strong&gt; since the time for &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; to run at a node varies with the height of the node in the tree, and the heights of most nodes are small.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;n-element heap height&lt;/dt&gt;
+  &lt;dd&gt;An n-element heap has height &lt;strong&gt;floor(lgn)&lt;/strong&gt;.&lt;/dd&gt;
+  &lt;dt&gt;n-element heap nodes&lt;/dt&gt;
+  &lt;dd&gt;An n-element heap has at most &lt;strong&gt;ceil(n/2&lt;sup&gt;h+1&lt;/sup&gt;)&lt;/strong&gt; nodes of any height h.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;pre&gt;
+BUILD-MAX-HEAP(A)
+A.heap-size = A.length
+for i = floor(A.length/2) downto 1
+	MAX-HEAPIFY(A,i)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/buildmaxheap.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The heapsort algorithm&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The heapsort algorithm starts by using &lt;code&gt;BUILD-MAX-HEAP&lt;/code&gt; to build a max-heap on the input array A[1..n], where n = A.length. Since the maximum element of the array is stored at the root &lt;strong&gt;A[1]&lt;/strong&gt;, we can put it into its correct final position by exchanging it with &lt;strong&gt;A[n]&lt;/strong&gt;. If we now discard node n from the heap - and can do so by simply decrementing A.heap-size - we observe that the children of the root remain max-heaps, but the new root element might violate the max-heap property. All we need to do to restore the max-heap property, however, is call &lt;code&gt;MAX-HEAPIFY(A,1)&lt;/code&gt;, which leaves a max-heap in &lt;strong&gt;A[1..n - 1]&lt;/strong&gt;. The heapsort algorithm that repeats this process for the max-heap of size n -1 down to a heap of size 2.&lt;/p&gt;
+
+&lt;pre&gt;
+HEAPSORT(A)
+BUILD-MAX-HEAP(A)
+for i = A.length downto 2
+	exchange A[1] with A[i]
+	A.heap-size = A.heap-size - 1
+	MAX-HEAPIFY(A,1)
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/heapsort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;HEAPSORT&lt;/code&gt; procedure takes time &lt;strong&gt;O(nlgn)&lt;/strong&gt;, since the call to &lt;code&gt;BUILD-MAX-HEAP&lt;/code&gt; takes time O(n) and each of the n - 1 calls to &lt;code&gt;MAX-HEAPIFY&lt;/code&gt; takes time O(lgn).&lt;/p&gt;</content><category term="Heapsort" /><category term="Data Structures" /><summary>Heapsort</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 5</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-5/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 5" /><published>2016-12-28T00:00:00-06:00</published><updated>2016-12-28T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-5</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-5/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The hiring problem&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Suppose that you need to hire a new office assistant and you decide to use an employment agency. It sends you one candidate each day. The cost of interview is small compared to the actual fees you would have to pay if you decide on a person. You are committed to having, at all times, the best possible person for this job. Therefore, if you decide that the applicant is better qualified than the current office assistant, you will fire the current office assistant and hire the new applicant. You wish to estimate the cost of this strategy.&lt;/p&gt;
+
+&lt;pre&gt;
+HIRE-ASSISTANT(n)
+best = 0  //candidate 0 is a least-qualified dummy candidate
+for i = 1 to n
+	interview candidate i
+	if candidate i is better than candidate best
+		best = i
+		hire candidate i
+&lt;/pre&gt;
+
+&lt;p&gt;Analyzing the cost of algorithm may seem very different from analyzing the running time. However, the analytical techniques used are identical whether we are analyzing cost or running time. We need to count the number of times certain basic operations are executed.
+Interviewing has a low cost &lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;&lt;/strong&gt;, whereas hiring is expensive, costing &lt;strong&gt;c&lt;sub&gt;h&lt;/sub&gt;&lt;/strong&gt;. If m is the number of people hired, the total cost associated with this algorithm is O(c&lt;sub&gt;i&lt;/sub&gt;n + c&lt;sub&gt;h&lt;/sub&gt;m).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Worst-case analysis&lt;/strong&gt;: we would actually need to hire every candidate that we interview. This situation occurs if the candidates come in strictly increasing order of quality, in which case we have n times, for a total hiring cost of O(c&lt;sub&gt;h&lt;/sub&gt;n).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Probabilistic analysis&lt;/strong&gt;: we must use knowledge of, or make assumptions about, the distribution of the inputs. Then we analyze our algorithm computing an &lt;strong&gt;average-case running time&lt;/strong&gt;, where we take the average over the distribution of the possible inputs. In this problem, we will assume that the applicants come in a random order.&lt;/p&gt;
+
+&lt;p&gt;We wish to compute the expected number of times that we hire a new office assistant. Candidate &lt;strong&gt;i&lt;/strong&gt; is hired, exactly when candidate i is better than each of candidates 1 through i - 1. Because we have assumed that the candidates arrive in a random order, the first i candidates have appeared in a random order. Any one of these first i candidates is equally likely to be the best-qualified so far. Candidate i has a probability of &lt;strong&gt;1/i&lt;/strong&gt; of being better qualified than candidates  1 through i - 1 and thus a probability of 1/i of being hired. Thus,&lt;br /&gt;
+Σ(i = 1 to n)[1/i] = &lt;strong&gt;lnn + O(1)&lt;/strong&gt; (Harmonic Series)&lt;/p&gt;
+
+&lt;p&gt;Even though we interview n people, we actually hire only approximately lnn of them, on average. This means that the average-case total hiring cost is &lt;strong&gt;O(c&lt;sub&gt;h&lt;/sub&gt;ln*n)&lt;/strong&gt; which is a significant improvement over the worst-case hiring cost of &lt;strong&gt;O(c&lt;sub&gt;h&lt;/sub&gt;n)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;In many cases, we know very little about the input distribution. Yet we often can use probability and randomness as a tool for algorithm design and analysis, by making the behavior of part of the algorithm random. In the hiring problem, it may seem as if the candidates are being presented to us in a random order, but we have no way of knowing whether or not they really are. What we need to do is to change the model slightly. We say that the employment agency has n candidates, and they send us a list of the candidates in advance. On each day, we chose, randomly, which candidate to interview. Although we still know nothing about how well they suit our job, we have made a significant change. Instead of relying on a guess that the candidates come to us in a random order, we have instead gained control of the process and enforced a random order. In other words, we modified the algorithm and we still expect to hire a new office assistant approximately ln*n times. But now we expect this to be the case for &lt;strong&gt;any&lt;/strong&gt; input, rather than for inputs drawn from a particular distribution.&lt;/p&gt;
+
+&lt;pre&gt;
+RANDOMIZED-HIRE-ASSISTANT(n)
+**randomly permute the list of candidates**
+best = 0  //candidate 0 is a least-qualified dummy candidate
+for i = 1 to n
+	interview candidate i
+	if candidate i is better than candidate best
+		best = i
+		hire candidate i
+&lt;/pre&gt;
+
+&lt;pre&gt;
+PERMUTE-BY-SORTING(A)
+n = A.length
+let P[1..n] be a new array
+for i = 1 to n
+	P[i] = RANDOM(1,n&lt;sup&gt;3&lt;/sup&gt;)
+sort A, using P as sort keys [Usually comparison sort Θ(nlgn)]
+&lt;/pre&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Example:  A = &amp;lt;1,2,3,4&amp;gt; P = &amp;lt;36,3,62,19&amp;gt; B = &amp;lt;2,4,1,3&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;
+RANDOMIZE-IN-PLACE(A)
+n = A.length
+for i = 1 to n
+	swap A[i] with A[RANDOM(i,n)] (Better, O(n) time)     
+&lt;/pre&gt;
+
+&lt;p&gt;Again, algorithm is randomized if its behavior is determined not only by its input but also by values produced by a random-number generator. In general, we discuss the &lt;strong&gt;average-case running time&lt;/strong&gt; when the probability distribution is over the inputs to the algorithm, and we discuss the &lt;strong&gt;expected running time&lt;/strong&gt; when the algorithm itself makes random choices.&lt;/p&gt;</content><category term="Probabilistic Analysis" /><category term="Randomized Algorithms" /><summary>Probabilistic Analysis &amp; Randomized Algorithms</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 4</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-4/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 4" /><published>2016-12-27T00:00:00-06:00</published><updated>2016-12-27T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-4</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-4/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The maximum-subarray problem&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/maxsubarray1.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The maximum subarray problem is the task of finding the contiguous subarray within a one-dimensional array of numbers which has the largest sum. The trick is that the numbers can be negative, otherwise it would be too easy. Let’s think how can we approach this problem using divide-and-conquer technique. Probably, we should divide the array in two parts, left and right. Then our maximum subarray must either be: &lt;br /&gt;
+1) entirely in the subarray A[low..mid], so that low ≤ i ≤ j ≤ mid, &lt;br /&gt;
+2) entirely in the subarray A[mid+1..high], so that mid ≤ i ≤ j ≤ high, or &lt;br /&gt;
+3) crossing the midpoint, so that low ≤ i ≤ mid &lt;strong&gt;&amp;lt;&lt;/strong&gt; j ≤ high&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/maxsubarray2.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the last part would not really be a smaller instance of our original problem, because it has the added restriction that the subarray it chooses must cross the midpoint, we should consider it to be in the combine part of our divide-and-conquer technique. All we need to do is to find 4.4(b) maximum subarrays of the form A[i..mid] and A[mid+1..j] and then combine them together.&lt;/p&gt;
+
+&lt;pre&gt;
+FIND-MAX-CROSSING-SUBARRAY(A,low,mid,high)
+left-sum = -inf
+sum = 0
+for i = mid downto low
+	sum = sum + A[i]
+	if sum &amp;gt; left-sum
+		left-sum = sum
+		max-left = i
+right-sum = -inf
+sum = 0
+for j = mid + 1 to high
+	sum = sum + A[j]
+	if sum &amp;gt; right-sum
+		right-sum = sum
+		max-right = j
+return (max-left,max-right,left-sum + right-sum);
+&lt;/pre&gt;
+
+&lt;p&gt;If the subarray A[low..high] contains n entries (so that n = high - low + 1), the call &lt;code&gt;FIND-MAX-CROSSING-SUBARRAY(A,low,mid,high)&lt;/code&gt; takes Θ(n) time. Since each iteration of each of the two for loops takes Θ(1) time, we just need to count up how many iterations there are altogether. We have:&lt;br /&gt;
+(left) + (right) = (mid - low + 1) + (high - mid) = high - low + 1 = n&lt;/p&gt;
+
+&lt;p&gt;Now we are ready to start writing our divide-and-conquer algorithm to solve the problem:&lt;/p&gt;
+&lt;pre&gt;
+FIND-MAXIMUM-SUBARRAY(A,low,high)
+if high==low [Base Case: only one element]
+	return (low,high,A[low])
+else 
+	mid = floor((low+high)/2)
+	(left-low,left-high,left-sum) = 
+		FIND-MAXIMUM-SUBARRAY(A,low,mid)
+	(right-low,right-high,right-sum) = 
+		FIND-MAXIMUM-SUBARRAY(A,mid+1,high)
+	(cross-low,cross-high,cross-sum) = 
+		FIND-MAX-CROSSING-SUBARRAY(A,low,mid,high)
+	if left-sum &amp;gt;= right-sum and left-sum &amp;gt;= cross-sum
+		return (left-low,left-high,left-sum)
+	elseif right-sum &amp;gt;= left-sum and right-sum &amp;gt;= cross-sum
+		return (right-low, right-high, right-sum)
+	else return (cross-low, cross-high,cross-sum)
+&lt;/pre&gt;
+
+&lt;p&gt;Let’s setup a recurrence that describes the running time of this function: &lt;br /&gt;
+T(n): Θ(1) + 2T(n/2) + Θ(n) + Θ(1) = 2T(n/2) + Θ(n).&lt;br /&gt;
+Since it looks the same as the recurrence for the merge-sort algorithm discussed in Chapter 2, we know that the solution should be T(n) = Θ(nlgn);&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Recurrences&lt;/strong&gt;&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Recurrence&lt;/dt&gt;
+  &lt;dd&gt;An equation of inequality that describes a function in terms of its value on smaller inputs.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Recurrences go hand in hand with the divide-and conquer paradigm discussed in Chapter 2, because they give us a natural way to characterize the running times of such algorithms. For example, we could have a recursive algorithm that divides subproblems into unequal sizes, such as a 2/3-to-1/3 split. If the divide and combine steps take linear time, such an algorithm would give rise to the recurrence T(n) = T(2n/3) + T(n/3) + Θ(n).&lt;/p&gt;
+
+&lt;p&gt;There are three methods for solving recurrences (obtaining asymptotic Θ or O bounds on the solution):&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the substitution method, we guess a bound and then use mathematical induction to prove our guess correct.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The recursion-tree method converts the recurrence into a tree whose nodes represent the costs incurred at various levels of the recursion.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The master method provides bounds for recurrences of the form T(n) = aT(n/b) + f(n) - where algorithm creates subproblems, each of which is n/b the size of the original problem, and in which the divide and combine steps together take f(n) time.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The substitution method for solving recurrences&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Guess the form of the solution.&lt;/li&gt;
+  &lt;li&gt;Use mathematical induction to find the constants and show that the solution works.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For example, T(n) = 2T(floor(n/2)) + n. We may guess that the solution is T(n) = O(nlgn) since it reminds us about the recurrence we’ve seen earlier. The substitution method requires us to prove that T(n) ≤ cnlgn for an appropriate choice of the constant c &amp;gt; 0.We start by assuming that this bound holds for all positive number m &amp;lt; n, in particular for m = (floor(n/2)), yielding T((floor(n/2)) ≤ c(floor(n/2))lg(floor(n/2)). Substitute this into recurrence and we get:&lt;br /&gt;
+T(n) &lt;br /&gt;
+	 ≤ 2(c(floor(n/2))lg(floor(n/2))) + n &lt;br /&gt;
+     ≤ cnlg(n/2) + n &lt;br /&gt;
+     = cnlgn - cnlg2 + n &lt;br /&gt;
+     = cnlgn - cn + n
+     ≤ cnlgn&lt;/p&gt;
+
+&lt;p&gt;An easy way to avoid a second step would be to pick a &lt;strong&gt;c&lt;/strong&gt; that makes this inequality come true for sufficiently large n. As we can see, it holds if c ≥ 1. However, a right way to do it is to use mathematical induction to prove base and inductive steps, which I am not going to talk through since we would make this chapter even broader.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The recursion-tree method for solving recurrences&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/mergesort_rt.jpg&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We have already seen this method in Chapter 2 when we tried to derive the running time for the merge-sort algorithm. There are few things to remember:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The subproblem decrease by a factor of &lt;strong&gt;a&lt;/strong&gt; each time we go down one level, we eventually must reach a boundary condition. How far from the root do we reach one? The subproblem for a node at depth i is &lt;strong&gt;n/a&lt;sup&gt;i&lt;/sup&gt;&lt;/strong&gt;. This, the subproblem size hits n = 1 when &lt;strong&gt;n/a&lt;sup&gt;i&lt;/sup&gt; = 1&lt;/strong&gt; or when &lt;strong&gt;i = log&lt;sub&gt;a&lt;/sub&gt;n&lt;/strong&gt;. Thus, the tree has &lt;strong&gt;log&lt;sub&gt;a&lt;/sub&gt;n + 1&lt;/strong&gt; levels.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What’s the cost at each level of the tree? Each level has &lt;strong&gt;b&lt;/strong&gt; times more nodes that the level above, and so the number of nodes at depth i is &lt;strong&gt;b&lt;sup&gt;i&lt;/sup&gt;&lt;/strong&gt;. Since subproblem sizes reduce by a factor of a for each level we go down from the root, each node at depth i, has a cost of &lt;strong&gt;F(n/a&lt;sup&gt;i&lt;/sup&gt;)&lt;/strong&gt;. Multiplying this by the number of nodes at each level we get &lt;strong&gt;b&lt;sup&gt;i&lt;/sup&gt;*F(n/a&lt;sup&gt;i&lt;/sup&gt;)&lt;/strong&gt;. The bottom level, at depth log&lt;sub&gt;a&lt;/sub&gt;n, has &lt;strong&gt;b&lt;sup&gt;(log&lt;sub&gt;a&lt;/sub&gt;n)&lt;/sup&gt; = n&lt;sup&gt;(log&lt;sub&gt;a&lt;/sub&gt;b)&lt;/sup&gt;&lt;/strong&gt; each contributing cost T(1).&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;The master method for solving recurrences&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Let A ≥ 1 and b &amp;gt; 1 be constants, let f(n) be a function, and let T(n) be defined on the nonnegative integers by the recurrence&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;T(n) = aT(n/b) + f(n)&lt;/strong&gt;. Then T(n) has the following asymptotic bounds:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;If f(n) = O(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a-e&lt;/sup&gt;) for some constant e &amp;gt; 0, then T(n) = Θ(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If f(n) = Θ(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;), then T(n) = Θ(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt; * lgn)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If f(n) = Ω(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a+e&lt;/sup&gt;) for some constant e &amp;amp;gt 0, and if af(n/b) ≤ cf(n) for some constant c less than 1 and all sufficiently large n, then T(n) = Θ(f(n))&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In each of three cases, we compare the function f(n) with the function (n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;). The largest of the two would be the solution to the recurrence.&lt;/p&gt;
+
+&lt;p class=&quot;notice_info&quot;&gt;Important note: in order to use rule 1 f(n) must be &lt;strong&gt;polynomially smaller&lt;/strong&gt; than (n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;) [&lt;strong&gt;polynomially larger&lt;/strong&gt; for rule 3]&lt;/p&gt;
+
+&lt;p&gt;Examples:&lt;/p&gt;
+
+&lt;p&gt;T(n) = 9T(n/3) + n  &lt;br /&gt;
+a = 9, b = 3, f(n) = n, and thus we have (n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;) = Θ(n&lt;sup&gt;2&lt;/sup&gt;). Since f(n) = O((n&lt;sup&gt;log&lt;sub&gt;3&lt;/sub&gt;9-e&lt;/sup&gt;), where e = 1, we can apply case 1 of the master theorem and conclude that the solution is T(n) = Θ(n&lt;sup&gt;2&lt;/sup&gt;). An easier way to remember this might be to take the power of f(n), let’s say d, and check the relationship between a and b&lt;sup&gt;d&lt;/sup&gt;.
+[9 &amp;gt; 3&lt;sup&gt;1&lt;/sup&gt; -&amp;gt; case 1]&lt;/p&gt;
+
+&lt;p&gt;T(n) = T(2n/3) + 1   &lt;br /&gt;
+(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;) = 1. Case 2 applies, since f(n) = Θ(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;) = Θ(1), and thus the solution to the recurrence is T(n) = Θ(lgn)
+[1 = 3/2&lt;sup&gt;0&lt;/sup&gt; = 1 -&amp;gt; case 2]&lt;/p&gt;
+
+&lt;p&gt;T(n) = 3T(n/4) + nlgn &lt;br /&gt;
+(n&lt;sup&gt;log&lt;sub&gt;b&lt;/sub&gt;a&lt;/sup&gt;) = O(n&lt;sup&gt;0.793&lt;/sup&gt;). Since f(n) = Ω(n&lt;sup&gt;log&lt;sub&gt;4&lt;/sub&gt;3+e&lt;/sup&gt;), where e ~ 0.2, case 3 applies if we can show that the regularity condition holds for f(n). For sufficiently large n, we have that af(n/b) = 3(n/4)lg(n/4) ≤ (3/4) nlgn = cf(n) for c = 3/4. Thus, T(n) = Θ(nlgn).
+[3 &amp;lt; 4&lt;sup&gt;log&lt;sub&gt;4&lt;/sub&gt;3&lt;/sup&gt; = 4&lt;sup&gt;0.793&lt;/sup&gt; = 0.30021 -&amp;gt; case 3]&lt;/p&gt;</content><category term="Maximum Subarray Problem" /><category term="Solving Recurrences" /><summary>More about Divide-and-Conquer</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 3</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-3/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 3" /><published>2016-12-21T00:00:00-06:00</published><updated>2016-12-21T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-3</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-3/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Growth of Functions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;The order of growth of the running time of an algorithm gives a simple characterization of the algorithm’s efficiency and allows us to compare the relative performance of alternative algorithms. When we look at input sizes large enough to make only the order of growth of the running time relevant, we care about &lt;strong&gt;asymptotic efficiency&lt;/strong&gt; of algorithms. That is, how it increases with the size of the input in the limit, as the size of the input increases without bound.&lt;/p&gt;
+
+&lt;p&gt;There are various kinds and flavors of asymptotic notations but these three are the ones you should definitely be familiar with:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/asymptotic.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Θ(Big-theta) notation&lt;/dt&gt;
+  &lt;dd&gt;For a given function g(n), we denote by Θ(g(n)) the set of functions such that some other function f(n) belongs to if there exist positive constants c&lt;sub&gt;1&lt;/sub&gt; and c&lt;sub&gt;2&lt;/sub&gt; such that it can be sandwiched between c&lt;sub&gt;1&lt;/sub&gt;g(n) and c&lt;sub&gt;2&lt;/sub&gt;g(n), for sufficiently large n. We say that g(n) is an &lt;strong&gt;asymptotically tight bound&lt;/strong&gt; for f(n) since it bounds it from above and below.&lt;/dd&gt;
+  &lt;dt&gt;O(Big-oh) notation&lt;/dt&gt;
+  &lt;dd&gt;“Big-oh” provides us with only an &lt;strong&gt;asymptotic upper bound&lt;/strong&gt; of the function. For a given function g(n), we denote by O(g(n)) the set of functions such that some other function f(n) belongs to if there exists positive constants c and n&lt;sub&gt;0&lt;/sub&gt; such that 0 ≤ f(n) ≤ cg(n) for all n ≥ n&lt;sub&gt;0&lt;/sub&gt;. That is, for all values n at and to the right of n&lt;sub&gt;0&lt;/sub&gt;, the value of the function f(n) is on or below cg(n).&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;Using this notation, we can often describe the running time of an algorithm merely by inspecting the algorithm’s overall structure. For example, the doubly nested loop structure of insertion sort yields an O(n&lt;sup&gt;2&lt;/sup&gt;) upper bound on the worst-case running time. When we say “the running time is O(n&lt;sup&gt;2&lt;/sup&gt;)”, we mean that there is a function f(n) that is O(n&lt;sup&gt;2&lt;/sup&gt;) such that for any value of n, no matter what particular input of size n is chose, the running time on that input is bounded from above by the value f(n). In other words, &lt;span style=&quot;color:red&quot;&gt;it won’t run any slower than O(g(n))&lt;/span&gt;.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Ω(Big-omega) notation&lt;/dt&gt;
+  &lt;dd&gt;Just as Ω-notation provides an asymptotic upper bound on a function, “Big-omega of g of n” provides an &lt;strong&gt;asymptotic lower bound&lt;/strong&gt;. For a given function g(n), we denote by O(g(n)) the set of functions such that some other function f(n) belongs to if there exists positive constants c and n&lt;sub&gt;0&lt;/sub&gt; such that 0 ≤ cg(n) ≤ f(n) for all n ≥ n&lt;sub&gt;0&lt;/sub&gt;;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;When we say that the running time of an algorithm is Ω(g(n)), we mean that no matter what particular input of size n is chosen for each value of n, the running time on that input is at least a constant * g(n), for sufficiently large n. In other words, &lt;span style=&quot;color:red&quot;&gt;it won’t run any faster than Ω(g(n))&lt;/span&gt;.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;It’s important to note that running time of insertion sort belongs both to Ω(n) and O(n&lt;sup&gt;2&lt;/sup&gt;) since it falls anywhere between a linear function of n and a quadratic function of n. Moreover, these bounds are asymptotically tight: for instance, the runnning time of insertion sort is not Ω(n^2), since there exists an input for which it runs in Θ(n) time (already sorted input). It is not contradictory, however, to say that the &lt;strong&gt;worst-case&lt;/strong&gt; running time of insertion sort is Ω(n^2), since there exists such an input. From here it’s not hard to deduce that Θ-notation implies both “Big-oh” and “Big-omega” notations.&lt;/p&gt;
+
+&lt;p&gt;The rest of the chapter deals with some special cases and a bunch of math rules about logs/exponentials, things that are useful to know but can be easily looked up when needed.&lt;/p&gt;</content><category term="Asymptotic Efficiency" /><summary>Growth of Functions</summary></entry><entry><title>ITA Baranov’s Walkthrough. Chapter 2</title><link href="https://login-m.github.io/Algorithms-&-Data-Structures-2/" rel="alternate" type="text/html" title="ITA Baranov's Walkthrough. Chapter 2" /><published>2016-12-19T00:00:00-06:00</published><updated>2016-12-19T00:00:00-06:00</updated><id>https://login-m.github.io/Algorithms-&amp;-Data-Structures-2</id><content type="html" xml:base="https://login-m.github.io/Algorithms-&amp;-Data-Structures-2/">&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Insertion Sort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Chapter 2 introduces &lt;strong&gt;insertion sort&lt;/strong&gt;, an algorithm that solves the sorting problem mentioned in a previous chapter.&lt;/p&gt;
+
+&lt;dl style=&quot;text-align: left;&quot;&gt;
+  &lt;dt&gt;Input&lt;/dt&gt;
+  &lt;dd&gt;A sequence of &lt;strong&gt;n&lt;/strong&gt; numbers &lt;strong&gt;&amp;lt;a&lt;sub&gt;1&lt;/sub&gt;, a&lt;sub&gt;2&lt;/sub&gt;, …, a&lt;sub&gt;n&lt;/sub&gt;&amp;gt;&lt;/strong&gt;&lt;/dd&gt;
+  &lt;dt&gt;Output&lt;/dt&gt;
+  &lt;dd&gt;A permutation &lt;strong&gt;&amp;lt;b&lt;sub&gt;1&lt;/sub&gt;, b&lt;sub&gt;2&lt;/sub&gt;, …, b&lt;sub&gt;n&lt;/sub&gt;&amp;gt;&lt;/strong&gt; of the input sequence such that &lt;strong&gt;b&lt;sub&gt;1&lt;/sub&gt; ≤ b&lt;sub&gt;2&lt;/sub&gt; ≤ … ≤ b&lt;sub&gt;n&lt;/sub&gt;&lt;/strong&gt;&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;pre&gt;
+INSERTION-SORT(A)						cost 	times
+for j = 2 to A.length						c&lt;sub&gt;1&lt;/sub&gt;	n
+	key = A[j]						c&lt;sub&gt;2&lt;/sub&gt;	n-1
+	// Insert A[j] into the sorted sequence A[1..j-1].	0	n-1
+	i = j - 1						c&lt;sub&gt;4&lt;/sub&gt;	n-1	
+	while i &amp;gt; 0 and A[i] &amp;gt; key				c&lt;sub&gt;5&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt;
+	  A[i+1] = A[i]						c&lt;sub&gt;6&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt; - 1
+	  i = i - 1						c&lt;sub&gt;7&lt;/sub&gt;	Σ(j=2 to n) t&lt;sub&gt;j&lt;/sub&gt; - 1
+	A[i+1] = key						c&lt;sub&gt;8&lt;/sub&gt;	n-1
+&lt;/pre&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Basically, algorithm divides the sequence in two parts. The left part &lt;strong&gt;A[1…j-1]&lt;/strong&gt; constitutes the currently sorted subarray and the right part is a subarray &lt;strong&gt;A[j+1…n]&lt;/strong&gt; that corresponds to the numbers to be sorted. What you want to do is to pick an element (starting from 2), go down the array and try to find a good spot to fit the number in, at the same time copying the values one place over to have a free slot for insertion.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Analyzing algorithms&lt;/strong&gt;&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Running Time &lt;strong&gt;T(N)&lt;/strong&gt;&lt;/dt&gt;
+  &lt;dd&gt;The running time of the algorithm is the sum of running times for each statement executed; a statement that takes &lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;&lt;/strong&gt; steps to execute and executes &lt;strong&gt;n&lt;/strong&gt; times will contribute &lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;n&lt;/strong&gt; to the total running time.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;T(N) = c&lt;sub&gt;1&lt;/sub&gt;*n c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;Σj +c&lt;sub&gt;6&lt;/sub&gt;Σ(t&lt;sub&gt;j&lt;/sub&gt;-1) +c&lt;sub&gt;7&lt;/sub&gt;Σ(t&lt;sub&gt;j&lt;/sub&gt;-1) +c&lt;sub&gt;8&lt;/sub&gt;(n-1).&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Algorithm’s running time does depend on the input. 
+For example, if the input array is sorted, we would have A[i]  key when i has its initial value of j-1. Thus t&lt;sub&gt;j&lt;/sub&gt; = 1 for j = 2, 3 … n and the T(N) would be:&lt;br /&gt;
+T(N) = c&lt;sub&gt;1&lt;/sub&gt;n +c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;(n-1) +c&lt;sub&gt;8&lt;/sub&gt;(n-1) = (c&lt;sub&gt;1&lt;/sub&gt;+..c&lt;sub&gt;8&lt;/sub&gt;)n - (c&lt;sub&gt;2&lt;/sub&gt;+c&lt;sub&gt;4&lt;/sub&gt;+c&lt;sub&gt;5&lt;/sub&gt;+c&lt;sub&gt;8&lt;/sub&gt;) = &lt;strong&gt;Cn - c&lt;/strong&gt;&lt;br /&gt;
+This clearly looks like a &lt;span style=&quot;color:red&quot;&gt;linear&lt;/span&gt; function of n.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Another example, array is in reverse sorted order, then we must compare the entire left subarray which would make t&lt;sub&gt;j&lt;/sub&gt; = j for j = 2, 3 … n. Consequently, T(N) would look like:&lt;br /&gt;
+T(N) = c&lt;sub&gt;1&lt;/sub&gt;n +c&lt;sub&gt;2&lt;/sub&gt;(n-1) +c&lt;sub&gt;4&lt;/sub&gt;(n-1) +c&lt;sub&gt;5&lt;/sub&gt;(n(n+1)/2-1) + c&lt;sub&gt;6&lt;/sub&gt;(n(n-1)/2) + c&lt;sub&gt;7&lt;/sub&gt;(n(n-1)/2) +c&lt;sub&gt;8&lt;/sub&gt;(n-1) &lt;br /&gt;
+= &lt;strong&gt;Cn&lt;sup&gt;2&lt;/sup&gt; + Cn - c&lt;/strong&gt;&lt;br /&gt;
+This clearly looks like a &lt;span style=&quot;color:red&quot;&gt;quadratic&lt;/span&gt;  function of n.&lt;/p&gt;
+&lt;p class=&quot;notice_info&quot;&gt;Notice that  Σ(j=2 to n)[j] = n(n+1)/2-1 and Σ(j=2 to n)[j-1] = n(n-1)/2&lt;/p&gt;
+
+&lt;p&gt;When we try to analyze algorithms, we usually only care about finding the &lt;strong&gt;worst-case&lt;/strong&gt; running times. Why?&lt;/p&gt;
+&lt;ol style=&quot;text-align: left;&quot;&gt;
+  &lt;li&gt;It gives an upper bound on the running time for any input. Knowing it provides a guarantee that the algorithm will never take any longer.&lt;/li&gt;
+  &lt;li&gt;In some cases, worst case occurs fairly often (e.g. searching a database for non-existent information)&lt;/li&gt;
+  &lt;li&gt;The “average case” is often roughly as bad as the worst case. For example, imagine that half of the elements in A[1…j-1] are less than A[j] and half are greater. It would make t&lt;sub&gt;j&lt;/sub&gt; = j/2 which would be the same quadratic formula but divided by a constant (2), not a huge difference.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;To denote the worst case we write the running time of &lt;strong&gt;Θ(n&lt;sup&gt;2&lt;/sup&gt;)&lt;/strong&gt; (pronounced “theta of n-squared”) which represents a rate of growth or order of growth. We can ignore the lower-order terms because they are relatively insignificant for large values of n. All we care about is the leading term of the formula (e.g., cn&lt;sup&gt;2&lt;/sup&gt;).&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Algorithm Design &amp;amp; Mergesort&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Sometimes, we can come up with a different approach to tackle the same problem. So far we used an incremental approach: to sort the subarray A[1…j-1], we inserted a single element A[j] into its proper place, yielding the sorted subarray. A different way of doing things would be using &lt;strong&gt;divide-and-conquer&lt;/strong&gt; method: break the problem into several subproblems that are similar to the original problem but smaller in size, solve the subproblems recursively, and finally combine these solutions to create a solution to the original problem. Mergesort algorithm would be a good example of this.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;strong&gt;Divide&lt;/strong&gt;: Divide the n-element sequence to be sorted into two subsequences of n/2 elements each.&lt;br /&gt;
+&lt;strong&gt;Conquer&lt;/strong&gt;: Sort the two subsequences recursively using merge sort. &lt;br /&gt;
+&lt;strong&gt;Combine&lt;/strong&gt;: Merge the two sorted subsequences to produce a fully sorted sequence.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;The following &lt;code&gt;MERGE&lt;/code&gt; function merges two sorted subarrays &lt;strong&gt;A[p..q]&lt;/strong&gt; and &lt;strong&gt;A[q + 1..r]&lt;/strong&gt; where p ≤ q ≤ r. It merges them to form a single sorted subarray that replaces the current subarray &lt;strong&gt;A[p..r]&lt;/strong&gt;. Since we perform at most n steps, where each step is just a comparing of two elements from left and right subarrays, merging takes Θ(N) time.&lt;/p&gt;
+
+&lt;pre&gt;
+MERGE(A,p,q,r)
+n1 = q-p+1
+n2 = r-q
+let L[1..n1+1] and R[1..n2 +1] be new arrays
+for i = 1 to n1
+	L[i] = A[p+i-1]
+for j=1 to n2
+	R[j] = A[q+j]
+L[n1+1] = inf
+L[n2+1] = inf
+i = 1
+j = 1
+for k = p to r
+	if L[i] &amp;lt;= R[j]
+		A[k] = L[i]
+		i = i + 1
+	else A[k] = R[j]
+		j = j + 1
+&lt;/pre&gt;
+
+&lt;ol style=&quot;text-align: left;&quot;&gt;
+  &lt;li&gt;Compute the length of &lt;strong&gt;A[p..q]&lt;/strong&gt; and &lt;strong&gt;A[q+1..r]&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Create left and right of lengths &lt;strong&gt;n&lt;sub&gt;1&lt;/sub&gt;+1&lt;/strong&gt; and &lt;strong&gt;n&lt;sub&gt;2&lt;/sub&gt;+1&lt;/strong&gt;. Extra position holds the sentinel which would simplify our code.&lt;/li&gt;
+  &lt;li&gt;For loops copy the subarray &lt;strong&gt;A[p..q]&lt;/strong&gt; into &lt;strong&gt;L[1..n&lt;sub&gt;1&lt;/sub&gt;]&lt;/strong&gt; and &lt;strong&gt;A[q+1..r]&lt;/strong&gt; into &lt;strong&gt;R[1..n&lt;sub&gt;2&lt;/sub&gt;]&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;Put the sentinels.&lt;/li&gt;
+  &lt;li&gt;Put the values in &lt;strong&gt;A&lt;/strong&gt; in order.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Now we can use merge procedure as a subroutine in the merge sort algorithm.
+The procedure sorts the elements in the subarray &lt;strong&gt;A[p..r]&lt;/strong&gt;. If p ≥ r the subarray has at most one element and is therefore already sorted. Otherwise, the divide step simply computes an index &lt;strong&gt;q&lt;/strong&gt; that partitions A[p..r] into two subarrays: A[p..q], containing &lt;strong&gt;ceil(n/2)&lt;/strong&gt; elements and A[q+1..r], containing &lt;strong&gt;floor(n/2)&lt;/strong&gt; elements.&lt;/p&gt;
+&lt;pre&gt;
+MERGE-SORT(A,p,r)
+if p &amp;lt; r
+	q = floor((p+r)/2)
+	MERGE-SORT(A,p,q)
+	MERGE-SORT(A,q+1,r)
+	MERGE(A,p,q,r)
+&lt;/pre&gt;
+&lt;p style=&quot;text-align: left;&quot;&gt;To sort an entire array, we make the initial call &lt;code&gt;MERGE-SORT(A,1,A.length)&lt;/code&gt;. The algorithms goes all the way to the bottom, merges pairs of 1-item seqs to form sorted seqs of length 2, merges pairs of seqs of length 2 to form sorted seqs of length 4 and so on, until two sequences of length n/2 are merged to form the final sorted sequence of length n.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/mergesort.png&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Runtime Complexity&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align: left;&quot;&gt;T(n) is either going to be Θ(1) if n ≤ c or aT(n/b) + D(n) + C(n). &lt;br /&gt;
+In our case: &lt;br /&gt;
+1) D(n) is Θ(1) operation (finding q) [Divide] &lt;br /&gt;
+2) We recursively solve two subproblems, each of size n/2, which contributes to 2T(n/2) to the running time [Conquer] &lt;br /&gt;
+3) We have seen that MERGE takes Θ(N) time on n-element subarray so C(N) = Θ(N) [Combine]&lt;br /&gt;
+Thus, we get T(n) = Θ(1) [if n ≤ c] or 2T*(n/2) + Θ(n) [if n &amp;gt; 1]&lt;/p&gt;
+
+&lt;p&gt;So what exactly is 2T*(n/2)? To find it out, let’s refer to a recursion tree to better understand the first term.&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Recursion Tree&lt;/dt&gt;
+  &lt;dd&gt;A recursion tree is useful for visualizing what happens when a recurrence is iterated. It diagrams the tree of recursive calls and the amount of work done at each call.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/mergesort_rt.jpg&quot; alt=&quot;image-center&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First level takes cn time. &lt;br /&gt;
+Second level takes 2(cn/2) = cn.    &lt;br /&gt;
+Third level takes 4(cn/4) = cn.   &lt;br /&gt;
+To find out the total running time we need to sum up all the costs on each level. How do we know the number of levels?&lt;/p&gt;
+
+&lt;dl&gt;
+  &lt;dt&gt;Number of levels of the recursion tree&lt;/dt&gt;
+  &lt;dd&gt;The total number of levels of the recursion tree is &lt;strong&gt;lgn + 1&lt;/strong&gt;, where n is the number of leaves, corresponding to the input size.&lt;/dd&gt;
+&lt;/dl&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;Then, our recursion tree has lgn + 1 levels, each costing cn, for a total of cn(lgn + 1) = cnlgn + cn. &lt;br /&gt;
+Substitute this in our previous T(n) equation and we get: &lt;br /&gt;
+T(n) = Θ(1) [if n ≤ c] or cnlgn + cn + Θ(n) = Θ(nlgn) [if n &amp;gt; 1].&lt;br /&gt;
+This is a much better runtime complexity than the insertion sort we looked at earlier.&lt;/p&gt;</content><category term="Insertion Sort" /><category term="Runtime Complexity" /><category term="Merge Sort" /><summary>Insertion &amp; Merge sorts. Analyzing the Algorithm</summary></entry></feed>

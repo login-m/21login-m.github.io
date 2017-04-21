@@ -38,7 +38,7 @@ for j = 2 to A.length						c<sub>1</sub>	n
 Basically, algorithm divides the sequence in two parts. The left part **A[1...j-1]** constitutes the currently sorted subarray and the right part is a subarray **A[j+1...n]** that corresponds to the numbers to be sorted. What you want to do is to pick an element (starting from 2), go down the array and try to find a good spot to fit the number in, at the same time copying the values one place over to have a free slot for insertion.
 {: style="text-align: left;"}
 
-**Analyzing algoritms**
+**Analyzing algorithms**
 {: style="text-align: center;"}
 
 Running Time **T(N)**
@@ -135,7 +135,7 @@ To sort an entire array, we make the initial call <code>MERGE-SORT(A,1,A.length)
 T(n) is either going to be Θ(1) if n ≤ c or aT(n/b) + D(n) + C(n).   
 In our case:   
 1) D(n) is Θ(1) operation (finding q) [Divide]   
-2) We recursively solve two subproblems, each of size n/2, which contributes to 2T(n/2) to the running time [Conqueur]   
+2) We recursively solve two subproblems, each of size n/2, which contributes to 2T(n/2) to the running time [Conquer]   
 3) We have seen that MERGE takes Θ(N) time on n-element subarray so C(N) = Θ(N) [Combine]  
 Thus, we get T(n) = Θ(1) [if n ≤ c] or 2T*(n/2) + Θ(n) [if n > 1]
 {: style="text-align: left;"}
